@@ -10,7 +10,6 @@ textOutput = {
     3 : "processing started see below for results",
 }
 
-
 test=get_stats()
 @app.route('/', methods=['GET', 'POST'])
 
