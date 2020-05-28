@@ -27,3 +27,4 @@ htmlcov/
 /z.references
 /__pycache__
 /.vscode
+/test

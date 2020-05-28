@@ -11,10 +11,18 @@
 
   <div class="img-uploads-container">
     <div class="known-imgs">
-      <div>Step 1:</div>
+      <div>Step 1: Upload person to identify</div>
       {% if step1 %}
-      <form method="post" action="/">
-        <button type="submit" value="known" name="known">known</button>
+      <form method="post" action="/" enctype="multipart/form-data">
+
+<!-- here -->
+<!-- here -->
+        <input type=file name=images multiple>
+
+
+        <button type="submit" value="known" name="known">
+          upload known
+        </button>
       </form>
       {% endif %}
     </div>
