@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, Response, request, redirect, url_for
+from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from test import get_stats
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 
 UPLOAD_FOLDER = '/Users/bryanevangelista/Documents/projects/flask-site/test'
@@ -29,7 +30,7 @@ def allowed_file(filename):
 
 def upload_images(request):
     if request.method == 'POST':
-        print(request.files.getlist('images'))
+        print("here")
         if 'images' not in request.files:
             flash('No file part')
             return redirect(request.url)
@@ -61,7 +62,8 @@ def index():
                 step3=False,
                 )
         elif request.form.get('unknown') == 'unknown':
-            upload_images(request)
+            print(request)
+            # upload_images(request)
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
