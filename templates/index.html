@@ -11,26 +11,33 @@
 
   <div class="img-uploads-container">
     <div class="known-imgs">
-      <div>Step 1 of 3:</div>
+      <div>Step 1:</div>
+      {% if step1 %}
       <form method="post" action="/">
         <button type="submit" value="known" name="known">known</button>
       </form>
+      {% endif %}
     </div>
 
+
     <div class="unknown-imgs">
-      <div>Step 2 of 3:</div>
+      <div>Step 2:</div>
+      {% if step2 %}
       <form method="post" action="/">
         <button type="submit" value="unknown" name="unknown">unknown</button>
       </form>
+      {% endif %}
     </div>
   </div>
 
   <div class="text-output-start">
     <div>
-      <div>Step 3 of 3:</div>
+      <div>Step 3:</div>
+      {% if step3 %}
       <form method="post" action="/">
         <button type="submit" value="start" name="start">start</button>
       </form>
+      {% endif %}
     </div>
   </div>
 
