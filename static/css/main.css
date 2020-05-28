@@ -23,7 +23,13 @@ body{
   align-items: center;      /* new */
   justify-content: center;  /* new */
 }
-.start{
+
+button {
+  border-radius: 0.4rem;
+  border: 0.2rem solid rgb(17, 17, 17);
+}
+
+.start button {
   font-size: 12rem;
 }
 
