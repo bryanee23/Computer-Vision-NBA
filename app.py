@@ -9,6 +9,12 @@ textOutput = {
     2 : "processing started see below for results",
 }
 
+directions = {
+    0 : "loading images",
+    1 : "loading unknown images",
+    2 : "processing started see below for results",
+}
+
 test=get_stats()
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -23,7 +29,7 @@ def index():
             # pass # do something else
             return render_template(
                 "index.html",
-                text_output=textOutput[1]
+                text_output=textOutput[1], start=True
                 )
         elif request.form.get('start') == 'start':
             # pass # do something else

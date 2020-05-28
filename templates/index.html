@@ -25,9 +25,12 @@
 
   <div class="text-output ">
     <div>
+      {% if start %}
+      step 3:
       <form method="post" action="/">
         <button class="start" type="submit" value="start" name="start">start</button>
       </form>
+      {% endif %}
     </div>
   </div>
 
