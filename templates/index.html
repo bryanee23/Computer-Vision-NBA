@@ -2,27 +2,35 @@
 
 {% block body %}
 
+
 <div class="grid-container">
 
-  <div class="img_uploads_container">
-    <div class="known_imgs"> load known <button>load</button></div>
-    <div class="unknown_imgs"> load unknown <button>load</button></div>
+  <div class="text-output">
+    <div>{{text_output}} </div>
   </div>
 
-  <div class="output_container">
-    <div class="output_img"> image </div>
-    <div class="stats">
-      <ul>
-        <li>stats</li>
-        <li>go</li>
-        <li>here</li>
-      </ul>
+  <div class="img_uploads_container">
+    <div class="known_imgs">
+      <form method="post" action="/">
+        <input type="submit" value="known" name="known"/>
+      </form>
+    </div>
+
+    <div class="unknown_imgs">
+      <form method="post" action="/">
+        <input type="submit" value="unknown" name="unknown"/>
+      </form>
     </div>
   </div>
 
-  <footer>
-    <div>hdhahhd</div>
-  </footer>
+  <div class="text-output ">
+    <div>
+      <form method="post" action="/">
+        <input class="start" type="submit" value="start" name="start"/>
+      </form>
+    </div>
+  </div>
 
-</div>
+
+
 {% endblock %}

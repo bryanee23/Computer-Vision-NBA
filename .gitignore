@@ -23,7 +23,7 @@ htmlcov/
 .coverage.*
 *,cover
 
-# references folder
+# folders
 z.references/
 .DS_Store
 __pycache__/
