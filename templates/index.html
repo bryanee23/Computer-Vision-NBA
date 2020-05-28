@@ -9,15 +9,15 @@
     <div>{{text_output}} </div>
   </div>
 
-  <div class="img_uploads_container">
-    <div class="known_imgs">
+  <div class="img-uploads-container">
+    <div class="known-imgs">
       <div>Step 1 of 3:</div>
       <form method="post" action="/">
         <button type="submit" value="known" name="known">known</button>
       </form>
     </div>
 
-    <div class="unknown_imgs">
+    <div class="unknown-imgs">
       <div>Step 2 of 3:</div>
       <form method="post" action="/">
         <button type="submit" value="unknown" name="unknown">unknown</button>
@@ -25,15 +25,12 @@
     </div>
   </div>
 
-  <div class="text-output ">
+  <div class="text-output-start">
     <div>
       <div>Step 3 of 3:</div>
-      {% if start %}
-      step 3:
       <form method="post" action="/">
-        <button class="start" type="submit" value="start" name="start">start</button>
+        <button type="submit" value="start" name="start">start</button>
       </form>
-      {% endif %}
     </div>
   </div>
 

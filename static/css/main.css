@@ -24,22 +24,26 @@ body{
   justify-content: center;  /* new */
 }
 
+.text-output-start {
+  border: 1px solid blue;
+  display: inline-grid;            /* new */
+  align-items: center;      /* new */
+  justify-content: center;  /* new */
+}
+
 button {
   border-radius: 0.4rem;
   border: 0.2rem solid rgb(17, 17, 17);
 }
 
-.start button {
-  font-size: 12rem;
-}
 
-.img_uploads_container {
+.img-uploads-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 6rem;
 }
 
-.known_imgs, .unknown_imgs, .start {
+.known-imgs, .unknown-imgs, .start {
   display: inline-grid;            /* new */
   align-items: center;      /* new */
   justify-content: center;  /* new */
@@ -47,6 +51,8 @@ button {
 }
 
 
+
+/* processing page */
 .output_container {
   display: grid;
   grid-template-columns: 1fr 1fr;

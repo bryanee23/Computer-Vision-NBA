@@ -29,7 +29,7 @@ def index():
             # pass # do something else
             return render_template(
                 "index.html",
-                text_output=textOutput[1], start=True
+                text_output=textOutput[1]
                 )
         elif request.form.get('start') == 'start':
             # pass # do something else
