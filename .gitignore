@@ -26,4 +26,3 @@ htmlcov/
 # references folder
 z.references/
 .DS_Store
-__pycache__/
