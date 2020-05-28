@@ -22,7 +22,9 @@ body{
   display: flex;            /* new */
   align-items: center;      /* new */
   justify-content: center;  /* new */
-  font-size: 2rem;
+}
+.start{
+  font-size: 12rem;
 }
 
 .img_uploads_container {
