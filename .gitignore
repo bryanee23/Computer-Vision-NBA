@@ -27,3 +27,4 @@ htmlcov/
 z.references/
 .DS_Store
 __pycache__/
+.vscode/
