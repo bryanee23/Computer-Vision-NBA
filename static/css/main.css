@@ -39,8 +39,8 @@ button {
   grid-auto-rows: 6rem;
 }
 
-.known_imgs, .unknown_imgs {
-  display: flex;            /* new */
+.known_imgs, .unknown_imgs, .start {
+  display: inline-grid;            /* new */
   align-items: center;      /* new */
   justify-content: center;  /* new */
   border: 1px solid black;
