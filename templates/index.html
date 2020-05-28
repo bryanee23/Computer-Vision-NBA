@@ -14,12 +14,7 @@
       <div>Step 1: Upload person to identify</div>
       {% if step1 %}
       <form method="post" action="/" enctype="multipart/form-data">
-
-<!-- here -->
-<!-- here -->
-        <input type=file name=images multiple>
-
-
+        <input type="file" name=images multiple>
         <button type="submit" value="known" name="known">
           upload known
         </button>
@@ -31,6 +26,7 @@
       <div>Step 2:</div>
       {% if step2 %}
       <form method="post" action="/">
+        <input type=file name=images multiple>
         <button type="submit" value="unknown" name="unknown">unknown</button>
       </form>
       {% endif %}
