@@ -12,6 +12,19 @@ body{
   margin-right: 5%;
 }
 
+.text-output {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.text-output div {
+  border: 1px solid blue;
+  display: flex;            /* new */
+  align-items: center;      /* new */
+  justify-content: center;  /* new */
+  font-size: 2rem;
+}
+
 .img_uploads_container {
   display: grid;
   grid-template-columns: 1fr 1fr;

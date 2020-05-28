@@ -2,11 +2,26 @@
 
 {% block body %}
 
+
+
 <div class="grid-container">
 
+  <div class="text-output">
+    <div>{{test}} </div>
+  </div>
+
   <div class="img_uploads_container">
-    <div class="known_imgs"> load known <button>load</button></div>
-    <div class="unknown_imgs"> load unknown <button>load</button></div>
+    <div class="known_imgs">
+      <form method="post" action="/">
+        <input type="submit" value="known" name="known"/>
+      </form>
+    </div>
+
+    <div class="unknown_imgs">
+      <form method="post" action="/">
+        <input type="submit" value="unknown" name="unknown"/>
+      </form>
+    </div>
   </div>
 
   <div class="output_container">
