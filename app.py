@@ -17,6 +17,7 @@ def index():
     # print(request.method)
     if request.method == 'POST':
         if request.form.get('known') == 'known':
+            # call func
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
