@@ -26,5 +26,5 @@ htmlcov/
 # folders
 z.references/
 .DS_Store
-__pycache__/
+
 .vscode/
