@@ -33,7 +33,7 @@ def index():
 
         elif request.form.get('unknown') == 'unknown':
 
-            upload_images(request, 'unknown', 'unknown')
+            upload_images(request, 'unknown', 'test')
             return render_template(
                 "index.html",
                 text_output=textOutput[2],

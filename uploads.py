@@ -9,11 +9,26 @@ def allowed_file(filename):
     return "." in filename and \
            filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def create_new_DIR(name, project_dir):
+    name = name.filename.split("/")
+    new_dir = name[0]
+    path = (f"{project_dir}/{new_dir}")
+    try:
+        os.mkdir(path)
+    except OSError:
+        print ("Creation of the directory %s failed" % path)
+    else:
+        print ("Successfully created the directory %s" % path)
+
+    return path
 
 def upload_images(request, element_tag, save_location):
-    UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
+    # UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
+    # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+    UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
     if request.method == 'POST':
         if element_tag not in request.files:
@@ -25,22 +40,28 @@ def upload_images(request, element_tag, save_location):
             flash('No selected file')
             return redirect(request.url)
 
-# if / found, create new dir, return newdir, new location of image.save
-
         if file and allowed_file(file.filename):
-            create_new_DIR(file, UPLOAD_FOLDER)
+            print(file.name)
+            if file.filename.find("/") == -1:
+                for image in request.files.getlist(element_tag):
+                    image.filename = secure_filename(image.filename)
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
+            else:
+                new_path = create_new_DIR(file, UPLOAD_FOLDER)
+                UPLOAD_FOLDER = new_path
+                app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+                for image in request.files.getlist(element_tag):
+                    image.filename = secure_filename(image.filename)
+                    image.save(os.path.join(new_path, image.filename))
+
+            return redirect(request.url)
+
+
             # for image in request.files.getlist(element_tag):
             #     image.filename = secure_filename(image.filename)
             #     image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
-            return redirect(request.url)
+            # return redirect(request.url)
 
-def create_new_DIR(name, project_dir):
-    name = name.filename.split("/")
-    new_dir = name[0]
-    path = (f"{project_dir}/{new_dir}")
-    try:
-        os.mkdir(path)
-    except OSError:
-        print ("Creation of the directory %s failed" % path)
-    else:
-        print ("Successfully created the directory %s" % path)
+
+
