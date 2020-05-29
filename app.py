@@ -4,12 +4,13 @@ from test import get_stats
 from uploads import upload_images
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 textOutput = {
-    0 : "Proceed with Step 1",
-    1 : "loading images",
-    2 : "loading unknown images",
-    3 : "processing started see below for results",
+    0 : "Go to Step 1",
+    1 : "Known person loaded, proceed to Step 2",
+    2 : "Verification images loaded, proceed to Step 3",
+    3 : "Processing started see results below:",
 }
 
 test=get_stats()
