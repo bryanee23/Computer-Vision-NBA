@@ -10,8 +10,15 @@ textOutput = {
     0 : "Go to Step 1",
     1 : "Known person loaded, proceed to Step 2",
     2 : "Verification images loaded, proceed to Step 3",
-    3 : "Processing started see results below:",
+    3 : "Processing...",
 }
+
+MATCHES_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/matches")
+
+def show_image():
+    pics = os.listdir(MATCHES_DIR)
+    print(pics)
+    return pics
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -47,9 +54,11 @@ def index():
                 )
 
         elif request.form.get('start') == 'start':
+            current_image = os.listdir(MATCHES_DIR)
             return render_template(
                 "processing_images.html",
-                text_output=textOutput[3]
+                text_output=textOutput[3],
+                current_image=current_image[0],
                 )
 
         elif request.form.get('reset') == 'reset':
@@ -63,14 +72,14 @@ def index():
 
         else:
             return render_template("index.html")
-
     else:
-
         return render_template(
             "index.html",
             step1=True,
             text_output=textOutput[0],
             )
+
+
 
 if __name__ == "__main__":
     app.run()
