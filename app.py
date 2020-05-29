@@ -5,7 +5,6 @@ from uploads import upload_images
 
 app = Flask(__name__)
 
-
 textOutput = {
     0 : "Proceed with Step 1",
     1 : "loading images",
