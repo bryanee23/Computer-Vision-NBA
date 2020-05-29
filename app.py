@@ -6,10 +6,6 @@ from uploads import upload_images
 app = Flask(__name__)
 
 
-
-
-
-
 textOutput = {
     0 : "Proceed with Step 1",
     1 : "loading images",
@@ -22,6 +18,7 @@ test=get_stats()
 def index():
     # print(request.method)
     if request.method == 'POST':
+
         if request.form.get('known') == 'known':
             upload_images(request, 'known', 'test')
             return render_template(
@@ -31,7 +28,9 @@ def index():
                 step2=True,
                 step3=False,
                 )
+
         elif request.form.get('unknown') == 'unknown':
+
             upload_images(request, 'unknown', 'test')
             return render_template(
                 "index.html",
@@ -40,27 +39,23 @@ def index():
                 step2=False,
                 step3=True
                 )
+
         elif request.form.get('start') == 'start':
-            # pass # do something else
+
             return render_template(
                 "processing_images.html",
                 text_output=textOutput[3]
                 )
         else:
-            # pass # unknown
             return render_template("index.html")
+
     else:
-    # return render_template("index.html")
+
         return render_template(
             "index.html",
             step1=True,
             text_output=textOutput[0],
             )
-
-
-
-
-
 
 if __name__ == "__main__":
     app.run()
