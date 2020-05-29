@@ -5,6 +5,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
+
 def allowed_file(filename):
     return "." in filename and \
            filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -23,9 +24,6 @@ def create_new_DIR(name, project_dir):
     return path
 
 def upload_images(request, element_tag, save_location):
-    # UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
-    # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
     UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -56,12 +54,3 @@ def upload_images(request, element_tag, save_location):
                     image.save(os.path.join(new_path, image.filename))
 
             return redirect(request.url)
-
-
-            # for image in request.files.getlist(element_tag):
-            #     image.filename = secure_filename(image.filename)
-            #     image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
-            # return redirect(request.url)
-
-
-
