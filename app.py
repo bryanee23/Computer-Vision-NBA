@@ -1,6 +1,8 @@
 import os
+import requests
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
+from API_call import get_API_info
 from empty_folders import reset_all
 
 app = Flask(__name__)
@@ -15,15 +17,12 @@ textOutput = {
 
 MATCHES_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/matches")
 
-def show_image():
-    pics = os.listdir(MATCHES_DIR)
-    print(pics)
-    return pics
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-
+        print(get_API_info("Stephen Curry"))
         if request.form.get('known') == 'known':
             upload_images(request, 'known', 'known')
             return render_template(
@@ -55,10 +54,12 @@ def index():
 
         elif request.form.get('start') == 'start':
             current_image = os.listdir(MATCHES_DIR)
+            test=get_API_info("Stephen Curry")
             return render_template(
                 "processing_images.html",
                 text_output=textOutput[3],
                 current_image=current_image[0],
+                test=test
                 )
 
         elif request.form.get('reset') == 'reset':
