@@ -1,5 +1,4 @@
 import os
-import requests
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
 from API_call import get_API_info
