@@ -20,7 +20,9 @@ def index():
     if request.method == 'POST':
 
         if request.form.get('known') == 'known':
-            upload_images(request, 'known', 'test')
+            # print(request.files['known'])
+            upload_images(request, 'known', 'known')
+
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
@@ -31,13 +33,23 @@ def index():
 
         elif request.form.get('unknown') == 'unknown':
 
-            upload_images(request, 'unknown', 'test')
+            upload_images(request, 'unknown', 'unknown')
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
                 step1=False,
                 step2=False,
                 step3=True
+                )
+
+        elif request.form.get('more') == 'more':
+
+            return render_template(
+                "index.html",
+                text_output=textOutput[2],
+                step1=True,
+                step2=False,
+                step3=False
                 )
 
         elif request.form.get('start') == 'start':
