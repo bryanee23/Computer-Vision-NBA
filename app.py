@@ -1,7 +1,7 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
-from test import get_stats
 from uploads import upload_images
+from empty_folders import reset_all
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -13,7 +13,6 @@ textOutput = {
     3 : "Processing started see results below:",
 }
 
-test=get_stats()
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # print(request.method)
@@ -33,7 +32,7 @@ def index():
 
         elif request.form.get('unknown') == 'unknown':
 
-            upload_images(request, 'unknown', 'test')
+            upload_images(request, 'unknown', 'unknown')
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
@@ -43,7 +42,6 @@ def index():
                 )
 
         elif request.form.get('more') == 'more':
-
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
@@ -51,13 +49,18 @@ def index():
                 step2=False,
                 step3=False
                 )
-
+                
         elif request.form.get('start') == 'start':
-
             return render_template(
                 "processing_images.html",
                 text_output=textOutput[3]
                 )
+
+        elif request.form.get('reset') == 'reset':
+            print('here')
+            reset_all()
+            return render_template("index.html", step1=True)
+
         else:
             return render_template("index.html")
 

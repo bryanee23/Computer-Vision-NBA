@@ -24,7 +24,7 @@ htmlcov/
 *,cover
 
 # folders
-/z.references
+/references
 /__pycache__
 /.vscode
 /test
