@@ -7,9 +7,6 @@
 
   <div class="text-output">
     <div>
-    <form method="post" action="/">
-      <button type="submit" value="reset" name="reset">reset</button>
-    </form>
     {{text_output}}
   </div>
   </div>
@@ -28,15 +25,15 @@
     </div>
 
     <div class="unknown-imgs">
-      <div>Step 2:</div>
+      <div>Step 2: Upload images to search through</div>
       {% if step2 %}
       <form method="post" action="/" enctype="multipart/form-data">
         <input type="file" name="unknown" multiple>
         <button type="submit" value="unknown" name="unknown">
-          unknown
+          load search images
         </button>
         <button type="submit" value="more" name="more">
-          load more
+          load another person
         </button>
       </form>
       {% endif %}

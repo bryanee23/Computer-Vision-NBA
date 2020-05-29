@@ -15,13 +15,10 @@ textOutput = {
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # print(request.method)
     if request.method == 'POST':
 
         if request.form.get('known') == 'known':
-            # print(request.files['known'])
             upload_images(request, 'known', 'known')
-
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
@@ -31,7 +28,6 @@ def index():
                 )
 
         elif request.form.get('unknown') == 'unknown':
-
             upload_images(request, 'unknown', 'unknown')
             return render_template(
                 "index.html",
@@ -49,7 +45,7 @@ def index():
                 step2=False,
                 step3=False
                 )
-                
+
         elif request.form.get('start') == 'start':
             return render_template(
                 "processing_images.html",
@@ -59,7 +55,11 @@ def index():
         elif request.form.get('reset') == 'reset':
             print('here')
             reset_all()
-            return render_template("index.html", step1=True)
+            return render_template(
+                "index.html",
+                text_output=textOutput[0],
+                step1=True
+                )
 
         else:
             return render_template("index.html")
