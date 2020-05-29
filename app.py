@@ -2,11 +2,9 @@ import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from test import get_stats
+# from uploads import *
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-
-
-UPLOAD_FOLDER = '/Users/bryanevangelista/Documents/projects/flask-site/test'
 
 
 
@@ -22,19 +20,20 @@ textOutput = {
 test=get_stats()
 
 
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return "." in filename and \
+           filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def upload_images(request):
+def upload_images(request, element_tag, save_location):
+    UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/{save_location}")
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
     if request.method == 'POST':
-        print("here")
-        if 'images' not in request.files:
+        if element_tag not in request.files:
             flash('No file part')
             return redirect(request.url)
-        file = request.files['images']
+        file = request.files[element_tag]
 
         if file.filename == '':
             flash('No selected file')
@@ -42,7 +41,7 @@ def upload_images(request):
 
         if file and allowed_file(file.filename):
 
-            for image in request.files.getlist('images'):
+            for image in request.files.getlist(element_tag):
                 image.filename = secure_filename(image.filename)
                 image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
             return redirect(request.url)
@@ -53,7 +52,7 @@ def index():
     # print(request.method)
     if request.method == 'POST':
         if request.form.get('known') == 'known':
-            upload_images(request)
+            upload_images(request, 'known', 'test')
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
@@ -62,8 +61,7 @@ def index():
                 step3=False,
                 )
         elif request.form.get('unknown') == 'unknown':
-            print(request)
-            # upload_images(request)
+            upload_images(request, 'unknown', 'test')
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
