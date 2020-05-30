@@ -1,8 +1,10 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
-# from API_call import get_API_info
 from empty_folders import reset_all
+from stats import get_API_info
+
+print(get_API_info("Stephen Curry"))
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -69,7 +71,7 @@ def index():
                 step1=True
                 )
 
-  
+
 
         else:
             return render_template("index.html")

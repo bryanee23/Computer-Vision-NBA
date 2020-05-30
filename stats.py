@@ -1,6 +1,7 @@
 import requests
 from io import BytesIO
-
+from flask import Flask
+app = Flask(__name__)
 
 results_obj = {}
 
@@ -37,5 +38,3 @@ def get_API_info(name):
 
     return results_obj[name]
 
-
-# print(get_API_info("Stephen Curry"))
