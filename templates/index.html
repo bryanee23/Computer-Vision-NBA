@@ -28,13 +28,14 @@
       <div>Step 2: Upload images to search through</div>
       {% if step2 %}
       <form method="post" action="/" enctype="multipart/form-data">
+        <button type="submit" value="add_knowns" name="add_knowns">
+          &#8592;load more
+        </button>
         <input type="file" name="unknown" multiple>
         <button type="submit" value="unknown" name="unknown">
           load search images
         </button>
-        <button type="submit" value="more" name="more">
-          load another person
-        </button>
+
       </form>
       {% endif %}
     </div>
@@ -42,13 +43,41 @@
 
   <div class="text-output-start">
     <div>
-      <div>Step 3:</div>
+      Step 3:
       {% if step3 %}
-      <form method="post" action="/">
-        <button type="submit" value="start" name="start">start</button>
-      </form>
+        <form method="post" action="/">
+          <button type="submit" value="add_unknowns" name="add_unknowns">
+            back to Step 2
+          </button>
+          <button type="submit" value="start" name="start" >start</button>
+        </form>
+      {% endif %}
+      {% if start %}
+        <form method="post" action="/">
+          <button  value="next" name="next">next match</button>
+        </form>
       {% endif %}
     </div>
   </div>
+
+
+
+  {% if start %}
+  <div class="output_container">
+    <div class="output_img">
+
+      <img src='/static/images/matches/{{current_image}}'/>
+
+    </div>
+    <div class="stats">
+      <ul>
+        status
+        <li>stats</li>
+        <li>go</li>
+        <li>here</li>
+      </ul>
+    </div>
+  </div>
+  {% endif %}
 
 {% endblock %}

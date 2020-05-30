@@ -22,8 +22,8 @@ MATCHES_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/im
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # print(get_API_info("Stephen Curry"))
-        if request.form.get('known') == 'known':
+
+        if request.form.get('known') == 'known' or request.form.get('add_unknowns') == 'add_unknowns':
             upload_images(request, 'known', 'known')
             return render_template(
                 "index.html",
@@ -33,17 +33,7 @@ def index():
                 step3=False,
                 )
 
-        elif request.form.get('unknown') == 'unknown':
-            upload_images(request, 'unknown', 'unknown')
-            return render_template(
-                "index.html",
-                text_output=textOutput[2],
-                step1=False,
-                step2=False,
-                step3=True
-                )
-
-        elif request.form.get('more') == 'more':
+        elif request.form.get('add_knowns') == 'add_knowns':
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
@@ -52,24 +42,34 @@ def index():
                 step3=False
                 )
 
-        elif request.form.get('start') == 'start':
-            current_image = os.listdir(MATCHES_DIR)
-            # test=get_API_info("Stephen Curry")
+        elif request.form.get('unknown') == 'unknown':
+            upload_images(request, 'unknown', 'unknown')
             return render_template(
-                "processing_images.html",
+                "index.html",
+                text_output=textOutput[2],
+                step1=False,
+                step2=False,
+                step3=True,
+                )
+
+        elif request.form.get('start') == 'start' or request.form.get('next') == 'next':
+            current_image = os.listdir(MATCHES_DIR)
+            return render_template(
+                "index.html",
                 text_output=textOutput[3],
                 current_image=current_image[0],
-                test=test
+                start=True
                 )
 
         elif request.form.get('reset') == 'reset':
-            print('here')
             reset_all()
             return render_template(
                 "index.html",
                 text_output=textOutput[0],
                 step1=True
                 )
+
+  
 
         else:
             return render_template("index.html")
@@ -79,7 +79,6 @@ def index():
             step1=True,
             text_output=textOutput[0],
             )
-
 
 
 if __name__ == "__main__":
