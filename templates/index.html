@@ -71,13 +71,16 @@
     </div>
     <div class="stats">
       <ul>
-        status
-        <li>stats</li>
-        <li>go</li>
-        <li>here</li>
+        {{stats['full name']}}
+        <li>{{stats['team'] }}</li>
+        <li> games played: {{stats['games played'] }}</li>
+        <li> points per game: {{stats['points per game'] }}</li>
+        <li> shooting percentage: {{stats['shooting percentage'] }}</li>
       </ul>
     </div>
   </div>
   {% endif %}
 
 {% endblock %}
+
+<!-- {'ID': 115, 'full name': 'Stephen Curry', 'team': 'Golden State Warriors', 'games played': 5, 'points per game': 20.8, 'shooting percentage': '40.2%'} -->

@@ -4,8 +4,6 @@ from uploads import upload_images
 from empty_folders import reset_all
 from stats import get_API_info
 
-print(get_API_info("Stephen Curry"))
-
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -55,12 +53,14 @@ def index():
                 )
 
         elif request.form.get('start') == 'start' or request.form.get('next') == 'next':
+            stats=get_API_info("Stephen Curry")
             current_image = os.listdir(MATCHES_DIR)
             return render_template(
                 "index.html",
                 text_output=textOutput[3],
                 current_image=current_image[0],
-                start=True
+                start=True,
+                stats=stats
                 )
 
         elif request.form.get('reset') == 'reset':
