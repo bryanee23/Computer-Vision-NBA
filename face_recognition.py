@@ -1,13 +1,13 @@
 import face_recognition
 import os
 import cv2
-from API_call import get_API_info
 
 # directory setup, opencv border settings
-KNOWN_FACES_DIR = "images/known_faces"
-UNKNOWN_FACES_DIR = "images/unknown_faces"
-MATCHES_DIR = "images/matches"
-UPLOADED_IMAGES_DIR = "images/uploaded_images"
+ROOT_DIR = os.getcwd()
+KNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/known")
+UNKNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/unknown")
+MATCHES_DIR = (f"{ROOT_DIR}/static/images/matches")
+UPLOADED_IMAGES_DIR = (f"{ROOT_DIR}/static/images/uploaded")
 
 # face_recognition settings
 TOLERANCE = 0.45
@@ -95,4 +95,4 @@ for filename in os.listdir(f"{UNKNOWN_FACES_DIR}"):
             player = [{'first':'last'}]
             cv2.imwrite(f"{MATCHES_DIR}/{filename}", image)
 
-            print(get_API_info(match))
+

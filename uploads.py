@@ -25,8 +25,8 @@ def create_new_DIR(name, project_dir):
     return path
 
 def upload_images(request, element_tag, save_location):
-    root_DIR = os.getcwd()
-    UPLOAD_FOLDER = (f"{root_DIR}/static/images/{save_location}")
+    ROOT_DIR = os.getcwd()
+    UPLOAD_FOLDER = (f"{ROOT_DIR}/static/images/{save_location}")
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     if request.method == 'POST':
@@ -40,12 +40,15 @@ def upload_images(request, element_tag, save_location):
             return redirect(request.url)
 
         if file and allowed_file(file.filename):
-            print(file.name)
+                # handling unknown images
+                ##########################
             if file.filename.find("/") == -1:
                 for image in request.files.getlist(element_tag):
                     image.filename = secure_filename(image.filename)
                     image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
             else:
+                # handling known images
+                ##########################
                 new_path = create_new_DIR(file, UPLOAD_FOLDER)
                 UPLOAD_FOLDER = new_path
                 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
