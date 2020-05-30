@@ -48,8 +48,6 @@ if len(os.listdir(f"{UPLOADED_IMAGES_DIR}")) != len(os.listdir(f"{UNKNOWN_FACES_
 
 
 
-
-
 known_faces = []
 known_names = []
 
