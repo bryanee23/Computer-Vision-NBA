@@ -11,6 +11,7 @@ def allowed_file(filename):
            filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # new directory for uploaded known folders
+############################################
 def create_new_DIR(name, project_dir):
     name = name.filename.split("/")
     new_dir = name[0]
@@ -23,9 +24,9 @@ def create_new_DIR(name, project_dir):
         print ("Successfully created the directory %s" % path)
     return path
 
-
 def upload_images(request, element_tag, save_location):
-    UPLOAD_FOLDER = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{save_location}")
+    root_DIR = os.getcwd()
+    UPLOAD_FOLDER = (f"{root_DIR}/static/images/{save_location}")
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
     if request.method == 'POST':
