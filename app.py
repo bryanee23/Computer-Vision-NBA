@@ -73,7 +73,8 @@ def index():
         elif request.form.get('next') == 'next':
             stats=get_API_info("Stephen Curry")
             current_image = os.listdir(MATCHES_DIR)
-            text_output=len(os.listdir(MATCHES_DIR))
+
+            # img_slider("next")
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
