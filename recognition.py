@@ -2,13 +2,10 @@ import face_recognition
 import os
 import cv2
 from directory import *
+# from flask import Flask
 
-# # directory setup, opencv border settings
-# ROOT_DIR = os.getcwd()
-# KNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/known")
-# UNKNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/unknown")
-# MATCHES_DIR = (f"{ROOT_DIR}/static/images/matches")
-# UPLOADED_IMAGES_DIR = (f"{ROOT_DIR}/static/images/uploads")
+# app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 # face_recognition settings
 TOLERANCE = 0.45
@@ -86,11 +83,3 @@ def initate_recognition():
               cv2.imwrite(f"{MATCHES_DIR}/{match}-{counter}.png", image)
               counter += 1
   print('Processing complete')
-  return "complete"
-
-def run_process():
-  load_known_person()
-  resize_images()
-  print(initate_recognition())
-
-run_process()

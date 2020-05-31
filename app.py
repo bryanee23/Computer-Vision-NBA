@@ -1,11 +1,11 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
-from empty_folders import reset_all
+from empty_folders import reset_all, delete_folder_contents
 from api_call import get_API_info
 from directory import *
-from img_slider import img_slider
-# from recognition import MATCHES_DIR, resize_images,load_known_person,initate_recognition
+from img_slider import *
+from recognition import resize_images, load_known_person,initate_recognition
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -26,7 +26,7 @@ def index():
 
         if request.form.get('known') == 'known' or request.form.get('add_unknowns') == 'add_unknowns':
             upload_images(request, 'known', 'known')
-            # load_known_person()
+            load_known_person()
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
@@ -46,8 +46,8 @@ def index():
 
         elif request.form.get('unknown') == 'unknown':
             upload_images(request, 'unknown', 'uploads')
-            # resize_images()
-            # delete_folder_contents("uploads")
+            resize_images()
+            initate_recognition()
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
@@ -57,12 +57,16 @@ def index():
                 )
 
         elif request.form.get('start') == 'start':
-            stats=get_API_info("Stephen Curry")
-            current_image = os.listdir(MATCHES_DIR)
+            delete_folder_contents("uploads")
+
+            print(os.listdir(MATCHES_DIR))
+            current_image = os.listdir(MATCHES_DIR)[0]
+            print(current_image)
+            stats=get_API_info(current_image)
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
-                current_image=current_image[0],
+                current_image=current_image,
                 start=True,
                 stats=stats
                 )
@@ -70,7 +74,8 @@ def index():
         elif request.form.get('next') == 'next':
             current_image = img_slider("next")
             stats=get_API_info(current_image)
-
+            print(os.listdir(MATCHES_DIR))
+            print('current', current_image)
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
@@ -80,8 +85,10 @@ def index():
                 )
 
         elif request.form.get('prev') == 'prev':
-            stats=get_API_info("Stephen Curry")
             current_image = img_slider("prev")
+            print(os.listdir(MATCHES_DIR))
+            print('current', current_image)
+            stats=get_API_info(current_image)
 
             return render_template(
                 "index.html",
