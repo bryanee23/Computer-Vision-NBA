@@ -2,7 +2,7 @@ import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
 from empty_folders import reset_all
-from stats import get_API_info
+from api_call import get_API_info
 from directory import *
 from img_slider import img_slider
 # from recognition import MATCHES_DIR, resize_images,load_known_person,initate_recognition
@@ -54,7 +54,7 @@ def index():
                 step1=False,
                 step2=False,
                 step3=True,
-                )i
+                )
 
         elif request.form.get('start') == 'start':
             stats=get_API_info("Stephen Curry")
@@ -68,8 +68,8 @@ def index():
                 )
 
         elif request.form.get('next') == 'next':
-            stats=get_API_info("Stephen Curry")
             current_image = img_slider("next")
+            stats=get_API_info(current_image)
 
             return render_template(
                 "index.html",
