@@ -1,7 +1,7 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
-from empty_folders import reset_all, delete_folder_contents
+from empty_folders import reset_all, delete_folder_contents, delete_cache
 from api_call import get_API_info
 from directory import *
 from img_slider import *
@@ -47,6 +47,9 @@ def index():
         elif request.form.get('unknown') == 'unknown':
             upload_images(request, 'unknown', 'uploads')
             resize_images()
+            delete_folder_contents("matches")
+            delete_cache()
+
             initate_recognition()
             return render_template(
                 "index.html",
@@ -60,8 +63,11 @@ def index():
             delete_folder_contents("uploads")
 
             print(os.listdir(MATCHES_DIR))
+            print('current img from array', os.listdir(MATCHES_DIR)[0])
+
             current_image = os.listdir(MATCHES_DIR)[0]
-            print(current_image)
+            img_slider("next")
+            print('using slider', current_image)
             stats=get_API_info(current_image)
             return render_template(
                 "index.html",

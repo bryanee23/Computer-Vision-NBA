@@ -7,7 +7,9 @@ app.secret_key = os.urandom(24)
 
 matched_imgs = os.listdir(MATCHES_DIR)
 
-index = 0
+print('list len', len(matched_imgs)-1)
+print(os.listdir(MATCHES_DIR))
+index = -1
 def increase_index():
     global index
     index += 1
@@ -22,8 +24,9 @@ def reset():
 
 
 def img_slider(direction):
-  if index >= len(matched_imgs)-1:
+  if index == len(matched_imgs)-1:
     reset()
+    print('reseted img_slider')
 
   if direction == 'next':
     increase_index()
@@ -38,6 +41,5 @@ def img_slider(direction):
   elif direction == 'prev':
     decrease_index()
 
-  print(index)
+  print('imgslider', index)
   return matched_imgs[index]
-
