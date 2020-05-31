@@ -7,14 +7,19 @@ match_list = os.listdir(MATCHES_DIR)
 
 
 index = 0
-def img_slider(n):
+def image_slider(n):
   global index
   len_list = len(match_list)-1
 
   # index += n
   if index == len_list:
     index = 0
-  else:
+  elif index >= 0 and n == 1:
+    index += n
+
+  if index <= 0 and n == -1:
+    index = len_list
+  elif index > 0 and n == -1:
     index += n
 
   return index
@@ -26,42 +31,29 @@ def start():
   print(match_list[0])
 
 # mimics a next press
-# def img_slider(1):
-#   return img_slider(1)
+# def image_slider(1):
+#   return image_slider(1)
 
 
 def postive_edge():
-  current_img = match_list[img_slider(1)]
-  return current_img
+  current_image = match_list[image_slider(1)]
+  return current_image
 
 def negative_edge():
-  start()
-  print(next_img())
-  print(next_img())
-  print(next_img())
-  print(prev())
+  current_image = match_list[image_slider(-1)]
+  return current_image
 
-start()
-print(postive_edge())
-print(postive_edge())
-print(postive_edge())
-print(postive_edge())
-# negative_edge()
-# print(next_img())
-# print(next_img())
-# print(next_img())
+# start() # --0 start
+# print(postive_edge()) # --1
+# print(postive_edge()) # --2
+# print(postive_edge()) # --0 output is 1
+# print(postive_edge())
 
-
-
-#on start
-# MATCHES_DIR[0]
-
-# edge cases:
-# at the end
-
-#at the beggining:
-  # negative
-
-# brute force = restrict code on html
-  # if at the end of array, reset back to beginning
-  # can't press neg
+start() # --0 start
+print(postive_edge())  # --1
+print(negative_edge()) # --0
+print(negative_edge()) # --0
+print(postive_edge())  # --0
+print(postive_edge())  # --1
+print(postive_edge())  # --2
+print(negative_edge())  # --2

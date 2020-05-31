@@ -60,15 +60,11 @@ def index():
         elif request.form.get('start') == 'start':
             delete_folder_contents("uploads")
 
-            print(os.listdir(MATCHES_DIR))
-            print('current img from array', os.listdir(MATCHES_DIR)[0])
-
+            print(match_list)
             current_image = os.listdir(MATCHES_DIR)[0]
-            img_slider("next")
-            print('using slider', current_image)
-            stats=get_API_info(current_image)
 
-            redirect(request.url)
+            stats=get_API_info(current_image)
+            redirect(request.url) ##do I need this?##
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
@@ -78,11 +74,11 @@ def index():
                 )
 
         elif request.form.get('next') == 'next':
-            index = img_slider("next")
-            current_image = os.listdir(MATCHES_DIR)[index]
+
+            current_image = match_list[image_slider(1)]
+            print('current image', current_image)
+
             stats=get_API_info(current_image)
-            print(os.listdir(MATCHES_DIR))
-            print('current', current_image)
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
