@@ -1,14 +1,10 @@
 import os
-# from flask import Flask
 from directory import *
-
-# app = Flask(__name__)
-# app.secret_key = os.urandom(24)
-
-MATCHES_DIR 
+MATCHES_DIR
 
 print('list len', len(matched_imgs)-1)
 print(os.listdir(MATCHES_DIR))
+
 index = -1
 def increase_index():
     global index

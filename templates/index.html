@@ -65,7 +65,9 @@
     {% endif %}
       {% if start %}
         <form method="post" action="/">
+          {% if start %}
           <button  value="prev" name="prev">&#xab; previous</button>
+          {% endif %}
           <button  value="next" name="next">next &#xbb;</button>
         </form>
       {% endif %}

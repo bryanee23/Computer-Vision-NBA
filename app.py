@@ -6,6 +6,7 @@ from api_call import get_API_info
 from directory import *
 from img_slider import *
 from recognition import resize_images, load_known_person,initate_recognition
+from test import * ####
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
