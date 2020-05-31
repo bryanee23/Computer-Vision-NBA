@@ -2,10 +2,7 @@ import face_recognition
 import os
 import cv2
 from directory import *
-# from flask import Flask
 
-# app = Flask(__name__)
-app.secret_key = os.urandom(24)
 
 # face_recognition settings
 TOLERANCE = 0.45
@@ -32,6 +29,7 @@ def resize_images():
         cv2.imwrite(f'{UNKNOWN_FACES_DIR}/{filename}', image)
 
 
+
 known_faces = []
 known_names = []
 
@@ -40,19 +38,20 @@ def load_known_person():
   for name in os.listdir(KNOWN_FACES_DIR):
     if name.endswith(".DS_Store"):
         continue
+
     else:
+
         for filename in os.listdir(f"{KNOWN_FACES_DIR}/{name}"):
-          # print(filename)
-          # print(face_recognition.__version__)
-          # print("notfileName", f"{KNOWN_FACES_DIR}/{name}/{filename}")
           image = face_recognition.load_image_file(f"{KNOWN_FACES_DIR}/{name}/{filename}")
           encoding = face_recognition.face_encodings(image)[0]
           known_faces.append(encoding)
           known_names.append(name)
 
+
 def initate_recognition():
   print("Processing Unknown Faces")
   counter = 0
+
   for filename in os.listdir(f"{UNKNOWN_FACES_DIR}"):
       image = face_recognition.load_image_file(f"{UNKNOWN_FACES_DIR}/{filename}")
       face_locations = face_recognition.face_locations(image, model=MODEL)
@@ -62,6 +61,7 @@ def initate_recognition():
       for face_encoding, face_location in zip(encodings, face_locations):
           results = face_recognition.compare_faces(known_faces, face_encoding, TOLERANCE)
           match = None
+
           if True in results:
               match = known_names[results.index(True)]
               top_left = (face_location[3], face_location[0] - OFFSET)
@@ -83,9 +83,10 @@ def initate_recognition():
               cv2.imwrite(f"{MATCHES_DIR}/{match}-{counter}.png", image)
               counter += 1
 
-# empty array
+# clear arrays
   while len(known_faces) > 0:
     known_faces.pop()
   while len(known_names) > 0:
     known_names.pop()
+
   print('Face Recognintion Complete')
