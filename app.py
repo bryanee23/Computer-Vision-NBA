@@ -3,15 +3,13 @@ from flask import Flask, flash, render_template, Response, request, redirect, ur
 from uploads import upload_images
 from empty_folders import reset_all
 from stats import get_API_info
+from directory import *
+from img_slider import img_slider
 # from recognition import MATCHES_DIR, resize_images,load_known_person,initate_recognition
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-
-
-
-MATCHES_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/matches")
 
 textOutput = {
     0 : "Go to Step 1",
@@ -72,13 +70,24 @@ def index():
 
         elif request.form.get('next') == 'next':
             stats=get_API_info("Stephen Curry")
-            current_image = os.listdir(MATCHES_DIR)
+            current_image = img_slider("next")
 
-            # img_slider("next")
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
-                current_image=current_image[0],
+                current_image=current_image,
+                start=True,
+                stats=stats
+                )
+
+        elif request.form.get('prev') == 'prev':
+            stats=get_API_info("Stephen Curry")
+            current_image = img_slider("prev")
+
+            return render_template(
+                "index.html",
+                text_output=textOutput[4],
+                current_image=current_image,
                 start=True,
                 stats=stats
                 )

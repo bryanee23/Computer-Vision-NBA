@@ -1,13 +1,14 @@
 import face_recognition
 import os
 import cv2
+from directory import *
 
-# directory setup, opencv border settings
-ROOT_DIR = os.getcwd()
-KNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/known")
-UNKNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/unknown")
-MATCHES_DIR = (f"{ROOT_DIR}/static/images/matches")
-UPLOADED_IMAGES_DIR = (f"{ROOT_DIR}/static/images/uploads")
+# # directory setup, opencv border settings
+# ROOT_DIR = os.getcwd()
+# KNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/known")
+# UNKNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/unknown")
+# MATCHES_DIR = (f"{ROOT_DIR}/static/images/matches")
+# UPLOADED_IMAGES_DIR = (f"{ROOT_DIR}/static/images/uploads")
 
 # face_recognition settings
 TOLERANCE = 0.45
