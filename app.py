@@ -54,8 +54,7 @@ def index():
                 step1=False,
                 step2=False,
                 step3=True,
-                )
-
+                )i
 
         elif request.form.get('start') == 'start':
             stats=get_API_info("Stephen Curry")
