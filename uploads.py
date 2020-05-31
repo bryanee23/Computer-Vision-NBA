@@ -47,7 +47,7 @@ def upload_images(request, element_tag, save_location):
                     image.filename = secure_filename(image.filename)
                     image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
             else:
-                # handling known images
+                # handling known folders
                 ##########################
                 new_path = create_new_DIR(file, UPLOAD_FOLDER)
                 UPLOAD_FOLDER = new_path
