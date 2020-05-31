@@ -47,9 +47,6 @@ def index():
         elif request.form.get('unknown') == 'unknown':
             upload_images(request, 'unknown', 'uploads')
             resize_images()
-            delete_folder_contents("matches")
-            delete_cache()
-
             initate_recognition()
             return render_template(
                 "index.html",

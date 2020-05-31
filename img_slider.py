@@ -1,9 +1,9 @@
 import os
-from flask import Flask
+# from flask import Flask
 from directory import *
 
-app = Flask(__name__)
-app.secret_key = os.urandom(24)
+# app = Flask(__name__)
+# app.secret_key = os.urandom(24)
 
 matched_imgs = os.listdir(MATCHES_DIR)
 
