@@ -69,6 +69,8 @@ def index():
             img_slider("next")
             print('using slider', current_image)
             stats=get_API_info(current_image)
+
+            redirect(request.url)
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
@@ -78,7 +80,8 @@ def index():
                 )
 
         elif request.form.get('next') == 'next':
-            current_image = img_slider("next")
+            index = img_slider("next")
+            current_image = os.listdir(MATCHES_DIR)[index]
             stats=get_API_info(current_image)
             print(os.listdir(MATCHES_DIR))
             print('current', current_image)
@@ -91,7 +94,9 @@ def index():
                 )
 
         elif request.form.get('prev') == 'prev':
-            current_image = img_slider("prev")
+            index = img_slider("prev")
+            current_image = os.listdir(MATCHES_DIR)[index]
+
             print(os.listdir(MATCHES_DIR))
             print('current', current_image)
             stats=get_API_info(current_image)
@@ -119,6 +124,7 @@ def index():
         return render_template(
             "index.html",
             step1=True,
+            step3=True,
             text_output=textOutput[0],
             )
 

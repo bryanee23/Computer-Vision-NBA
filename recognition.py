@@ -82,4 +82,10 @@ def initate_recognition():
 
               cv2.imwrite(f"{MATCHES_DIR}/{match}-{counter}.png", image)
               counter += 1
-  print('Processing complete')
+
+# empty array
+  while len(known_faces) > 0:
+    known_faces.pop()
+  while len(known_names) > 0:
+    known_names.pop()
+  print('Face Recognintion Complete')

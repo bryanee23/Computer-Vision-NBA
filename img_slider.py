@@ -24,7 +24,7 @@ def reset():
 
 
 def img_slider(direction):
-  if index == len(matched_imgs)-1:
+  if index >= len(matched_imgs)-1:
     reset()
     print('reseted img_slider')
 
@@ -42,4 +42,4 @@ def img_slider(direction):
     decrease_index()
 
   print('imgslider', index)
-  return matched_imgs[index]
+  return index
