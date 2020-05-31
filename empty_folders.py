@@ -3,26 +3,23 @@ import shutil
 
 # https://www.geeksforgeeks.org/delete-a-directory-or-file-using-python/
 
-def delete_folders(folder):
-  FOLDER_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{folder}")
+ROOT_DIR = os.getcwd()
 
+def delete_folder(folder):
+  FOLDER_DIR = (f"{ROOT_DIR}/static/images/{folder}")
   for file in os.listdir(FOLDER_DIR):
-    print(file)
+    print(file, 'folder deleted')
     shutil.rmtree(f"{FOLDER_DIR}/{file}/")
 
 
-
-def delete_contents(folder):
-  FOLDER_DIR = (f"/Users/bryanevangelista/Documents/projects/flask-site/static/images/{folder}")
-
+def delete_folder_contents(folder):
+  FOLDER_DIR = (f"{ROOT_DIR}/static/images/{folder}")
   for file in os.listdir(FOLDER_DIR):
     os.remove(f"{FOLDER_DIR}/{file}")
 
 
 def reset_all():
-  delete_folders("known")
-  delete_contents("unknown")
-
-# delete_contents("unknown")
-# delete_contents("unknown")
-# reset_all()
+  delete_folder("known")
+  delete_folder_contents("unknown")
+  delete_folder_contents("matches")
+  delete_folder_contents("uploads")

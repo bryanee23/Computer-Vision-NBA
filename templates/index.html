@@ -18,7 +18,15 @@
       <form method="post" action="/" enctype="multipart/form-data">
         <input type="file" name="known" webkitdirectory="" directory="">
         <button type="submit" value="known" name="known">
-          upload known
+          upload known &#xbb;
+        </button>
+      </form>
+      {% endif %}
+
+      {% if step2 or step3 %}
+      <form method="post" action="/" enctype="multipart/form-data">
+        <button type="submit" value="add_knowns" name="add_knowns">
+          add folder
         </button>
       </form>
       {% endif %}
@@ -28,30 +36,33 @@
       <div>Step 2: Upload images to search through</div>
       {% if step2 %}
       <form method="post" action="/" enctype="multipart/form-data">
-        <button type="submit" value="add_knowns" name="add_knowns">
-          &#8592;load more
-        </button>
         <input type="file" name="unknown" multiple>
         <button type="submit" value="unknown" name="unknown">
-          load search images
+          load search images &#xbb;
         </button>
-
       </form>
       {% endif %}
+
+      {% if step3 %}
+      <form method="post" action="/">
+        <button type="submit" value="add_unknowns" name="add_unknowns">
+          add images
+        </button>
+      </form>
+    {% endif %}
+
     </div>
   </div>
 
   <div class="text-output-start">
     <div>
       Step 3:
+
       {% if step3 %}
-        <form method="post" action="/">
-          <button type="submit" value="add_unknowns" name="add_unknowns">
-            back to Step 2
-          </button>
-          <button type="submit" value="start" name="start" >start</button>
-        </form>
-      {% endif %}
+      <form method="post" action="/">
+        <button type="submit" value="start" name="start" >start</button>
+      </form>
+    {% endif %}
       {% if start %}
         <form method="post" action="/">
           <button  value="next" name="next">next match</button>
@@ -63,6 +74,24 @@
 
 
   {% if start %}
+  <div class="output_container">
+    <div class="output_img">
+
+      <img src='/static/images/matches/{{current_image}}'/>
+
+    </div>
+    <div class="stats">
+      <ul>
+        {{stats['full name']}}
+        <li>{{stats['team'] }}</li>
+        <li> games played: {{stats['games played'] }}</li>
+        <li> points per game: {{stats['points per game'] }}</li>
+        <li> shooting percentage: {{stats['shooting percentage'] }}</li>
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+    {% if output_container %}
   <div class="output_container">
     <div class="output_img">
 
