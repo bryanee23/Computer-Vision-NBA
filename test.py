@@ -11,14 +11,15 @@ def image_slider(n):
   global index
   len_list = len(match_list)-1
 
-  # index += n
-  if index == len_list:
+  if index == len_list and n == 1:
     index = 0
   elif index >= 0 and n == 1:
     index += n
 
   if index <= 0 and n == -1:
     index = len_list
+  elif index == len_list and n == -1:
+    index += n
   elif index > 0 and n == -1:
     index += n
 
@@ -50,10 +51,5 @@ def negative_edge():
 # print(postive_edge())
 
 start() # --0 start
-print(postive_edge())  # --1
 print(negative_edge()) # --0
 print(negative_edge()) # --0
-print(postive_edge())  # --0
-print(postive_edge())  # --1
-print(postive_edge())  # --2
-print(negative_edge())  # --2

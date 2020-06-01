@@ -5,19 +5,13 @@ from empty_folders import reset_all, delete_folder_contents, delete_cache
 from api_call import get_API_info
 from directory import *
 from img_slider import *
-from runtime import *
+from reload_server import reload_server
 from recognition import resize_images,initate_recognition
 
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-
-
-def reload_server():
-    f = open("runtime.py", "a")
-    f.write("here")
-    f.close()
 
 
 match_list = os.listdir(MATCHES_DIR)
@@ -73,7 +67,7 @@ def index():
         elif request.form.get('start') == 'start':
             delete_folder_contents("uploads")
             print('list', match_list)
-            current_image = match_list[image_slider(1)]
+            current_image = match_list[0]
 
             stats=get_API_info(current_image)
             redirect(request.url) ##do I need this?##
