@@ -16,8 +16,8 @@ app.secret_key = os.urandom(24)
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
-    0 : "Directions:  see Step 1",
-    1 : "Directions:  (images loaded) proceed to Step 2",
+    0 : "Directions:  see step 1",
+    1 : "Directions:  (images loaded) proceed to step 2",
     2 : "Directions:  (images loaded), see results below",
     3 : "Processing...",
     4 : (f"Matches Found: {len(os.listdir(MATCHES_DIR))}")
