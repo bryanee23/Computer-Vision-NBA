@@ -27,7 +27,7 @@ def reset_all():
   delete_folder_contents("unknown")
   delete_folder_contents("uploads")
   delete_folder_contents("matches")
-  delete_cache()
+  # delete_cache()
   reload_server()
   print('Reset Complete')
 
