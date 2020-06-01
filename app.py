@@ -90,7 +90,7 @@ def index():
                 start=True,
                 stats=stats
                 )
-
+                
         elif request.form.get('prev') == 'prev':
 
             current_image = match_list[image_slider(-1)]
