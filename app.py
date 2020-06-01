@@ -109,7 +109,6 @@ def index():
                 step1=True
                 )
 
-
         else:
             return render_template("index.html")
     else:
