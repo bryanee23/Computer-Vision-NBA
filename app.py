@@ -5,7 +5,7 @@ from empty_folders import reset_all, delete_folder_contents, delete_cache
 from api_call import get_API_info
 from directory import *
 from img_slider import *
-from recognition import resize_images, load_known_person,initate_recognition
+from recognition import resize_images,initate_recognition
 
 
 app = Flask(__name__)
@@ -23,11 +23,11 @@ textOutput = {
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST' and form.validate():
+    if request.method == 'POST':
 
         if request.form.get('known') == 'known' or request.form.get('add_unknowns') == 'add_unknowns':
             upload_images(request, 'known', 'known')
-            load_known_person()
+
             return render_template(
                 "index.html",
                 text_output=textOutput[1],
@@ -49,6 +49,8 @@ def index():
             upload_images(request, 'unknown', 'uploads')
             resize_images()
             initate_recognition()
+            print(match_list)
+
             return render_template(
                 "index.html",
                 text_output=textOutput[2],
