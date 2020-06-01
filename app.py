@@ -49,12 +49,11 @@ def index():
                 )
 
         elif request.form.get('unknown') == 'unknown':
+
             upload_images(request, 'unknown', 'uploads')
             resize_images()
             initate_recognition()
-            print('list', match_list)
             reload_server()
-            print('reload server', match_list)
 
             return render_template(
                 "index.html",
@@ -65,12 +64,10 @@ def index():
                 )
 
         elif request.form.get('start') == 'start':
-            delete_folder_contents("uploads")
-            print('list', match_list)
-            current_image = match_list[0]
 
+            delete_folder_contents("uploads")
+            current_image = match_list[0]
             stats=get_API_info(current_image)
-            redirect(request.url) ##do I need this?##
             return render_template(
                 "index.html",
                 text_output=textOutput[4],

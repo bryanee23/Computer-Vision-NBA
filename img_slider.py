@@ -20,5 +20,4 @@ def image_slider(n):
   elif index > 0 and n == -1:
     index += n
 
-  print(index)
   return index

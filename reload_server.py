@@ -7,4 +7,4 @@ def reload_server():
     f = open("reload_server.py", "a")
     f.write(" ")
     print('write file complete')
-    f.close() 
+    f.close()  
