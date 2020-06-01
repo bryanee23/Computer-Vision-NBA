@@ -6,8 +6,8 @@
 
   <div class="text-output">
     <div>
-    {{text_output}}
-  </div>
+      {{text_output}}
+    </div>
   </div>
 
   <div class="img-uploads-container">
@@ -31,13 +31,13 @@
         <img src="/static/loading.gif" alt="" />
       </div>
 
-        {% endif %}
+      {% endif %}
 
       <!-- additional loads -->
       {% if step2 or step3 %}
       <form method="post" action="/" enctype="multipart/form-data">
 
-        <button type="submit" value="add_knowns" name="add_knowns" >
+        <button type="submit" value="add_knowns" name="add_knowns">
           add folder
         </button>
 
@@ -77,7 +77,7 @@
         </button>
 
       </form>
-    {% endif %}
+      {% endif %}
 
     </div>
   </div>
@@ -93,16 +93,16 @@
 
       {% if step3 %}
       <form method="post" action="/">
-        <button type="submit" value="start" name="start" >results</button>
+        <button type="submit" value="start" name="start">results</button>
       </form>
-    {% endif %}
+      {% endif %}
       {% if start %}
-        <form method="post" action="/">
-          {% if start %}
-          <button  value="prev" name="prev">&#xab; previous</button>
-          {% endif %}
-          <button  value="next" name="next">next &#xbb;</button>
-        </form>
+      <form method="post" action="/">
+        {% if start %}
+        <button value="prev" name="prev">&#xab; previous</button>
+        {% endif %}
+        <button value="next" name="next">next &#xbb;</button>
+      </form>
       {% endif %}
     </div>
   </div>
@@ -113,7 +113,7 @@
   <div class="output_container">
     <div class="output_img">
 
-      <img src='/static/images/matches/{{current_image}}'/>
+      <img src='/static/images/matches/{{current_image}}' />
 
     </div>
     <div class="stats">
@@ -127,11 +127,11 @@
     </div>
   </div>
   {% endif %}
-    {% if output_container %}
+  {% if output_container %}
   <div class="output_container">
     <div class="output_img">
 
-      <img src='/static/images/matches/{{current_image}}'/>
+      <img src='/static/images/matches/{{current_image}}' />
 
     </div>
     <div class="stats">
@@ -151,7 +151,8 @@
     <div>
       <ul>
         Features:
-        <li> Facial Recognition and API call to hwww.balldontlie.io/</li>
+        <li>Facial Recognition</li>
+        <li>API call to hwww.balldontlie.io/</li>
       </ul>
       <ul>
         Tech used:
@@ -159,13 +160,26 @@
       </ul>
     </div>
 
+    <div class="contact">
+      <div>
+        source code:
+      </div>
+      <div>
+        contact info:
+      </div>
+
+      </span>
+    </div>
+
   </footer>
 
 </div>
 
+
+
 <div class='reset'>
   <form method="post" action="/">
-    <button type="submit" value="reset" name="reset">reset</button>
+    <button class='resetbtn' type="submit" value="reset" name="reset">reset</button>
   </form>
 </div>
 {% endblock %}
