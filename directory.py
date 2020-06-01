@@ -1,6 +1,6 @@
 import os
 
-# directory setup
+# folder directories used throughout the app
 ROOT_DIR = os.getcwd()
 KNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/known")
 UNKNOWN_FACES_DIR = (f"{ROOT_DIR}/static/images/unknown")
