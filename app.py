@@ -6,12 +6,12 @@ from api_call import get_API_info
 from directory import *
 from img_slider import *
 from recognition import resize_images, load_known_person,initate_recognition
-from test import * ####
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-
+match_list = os.listdir(MATCHES_DIR)
 textOutput = {
     0 : "Go to Step 1",
     1 : "Known person loaded, proceed to Step 2",
@@ -23,7 +23,7 @@ textOutput = {
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate():
 
         if request.form.get('known') == 'known' or request.form.get('add_unknowns') == 'add_unknowns':
             upload_images(request, 'known', 'known')
@@ -60,8 +60,7 @@ def index():
         elif request.form.get('start') == 'start':
             delete_folder_contents("uploads")
 
-            print(match_list)
-            current_image = os.listdir(MATCHES_DIR)[0]
+            current_image = match_list[image_slider(1)]
 
             stats=get_API_info(current_image)
             redirect(request.url) ##do I need this?##
@@ -76,7 +75,7 @@ def index():
         elif request.form.get('next') == 'next':
 
             current_image = match_list[image_slider(1)]
-            print('current image', current_image)
+
 
             stats=get_API_info(current_image)
             return render_template(
@@ -88,11 +87,8 @@ def index():
                 )
 
         elif request.form.get('prev') == 'prev':
-            index = img_slider("prev")
-            current_image = os.listdir(MATCHES_DIR)[index]
 
-            print(os.listdir(MATCHES_DIR))
-            print('current', current_image)
+            current_image = match_list[image_slider(-1)]
             stats=get_API_info(current_image)
 
             return render_template(

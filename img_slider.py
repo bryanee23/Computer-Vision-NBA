@@ -1,41 +1,22 @@
 import os
 from directory import *
-MATCHES_DIR
 
-print('list len', len(matched_imgs)-1)
-print(os.listdir(MATCHES_DIR))
+match_list = os.listdir(MATCHES_DIR)
 
-index = -1
-def increase_index():
-    global index
-    index += 1
+index = 0
+def image_slider(n):
+  global index
+  len_list = len(match_list)-1
 
-def decrease_index():
-    global index
-    index -= 1
+  # index += n
+  if index == len_list:
+    index = 0
+  elif index >= 0 and n == 1:
+    index += n
 
-def reset():
-    global index
-    index = -1
+  if index <= 0 and n == -1:
+    index = len_list
+  elif index > 0 and n == -1:
+    index += n
 
-
-def img_slider(direction):
-  if index >= len(matched_imgs)-1:
-    reset()
-    print('reseted img_slider')
-
-  if direction == 'next':
-    increase_index()
-
-  if direction == 'prev' and index <= -1:
-    reset()
-    increase_index()
-
-  elif direction == 'prev' and index == 0:
-    pass
-
-  elif direction == 'prev':
-    decrease_index()
-
-  print('imgslider', index)
   return index
