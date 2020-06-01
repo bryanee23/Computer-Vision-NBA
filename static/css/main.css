@@ -80,49 +80,29 @@ h1{
 }
 
 
-.button {
-	display: inline-block;
-	padding: .75rem 1.25rem;
-	border-radius: 10rem;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1rem;
-	letter-spacing: .15rem;
-	transition: all .3s;
-	position: relative;
-	overflow: hidden;
 
-}
-.button:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #3291cd;
-  border-radius: 10rem;
-  z-index: -2;
+
+
+.grid-container button {
+  padding: .75rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s !important;
+  justify-content: center;
+  align-content: center;
+  left: -12rem;
 }
 
-.button:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: darken(#3291cd, 15%);
-  transition: all .3s;
-  border-radius: 10rem;
-  z-index: -1;
+.grid-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
-.button:hover {
-  color: #5454;
-}
-.button:before {
-  width: 100%;
-}
+
+
+
+
+
 
 
 .img-uploads-container {
@@ -153,20 +133,6 @@ h1{
 input {
   color: rgb(236, 236, 241);
 }
-
-/* processing page */
-.output_container {
-  display: grid;
-  grid-template-columns: 1fr .6fr;
-  grid-auto-rows: auto;
-  border-top: 0.1rem solid #5454;
-}
-
-.stats, .output_img {
-  display: flex;
-  align-items: center;
-}
-
 
 
 .stats {
@@ -206,7 +172,6 @@ input {
 }
 
 
-/* can ignore styles below; decorative only */
 footer {
   display: grid;
   grid-template-columns: 1fr;
@@ -249,8 +214,8 @@ footer ul li::before {
 }
 .contact div {
   display: flex;
-  justify-content: left;
-  font-size: 1.5rem;
+  justify-content: center;
+  font-size: 1.3rem;
   margin: 2% 2% 0;
 }
 
