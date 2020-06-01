@@ -80,6 +80,8 @@ def index():
         elif request.form.get('next') == 'next':
 
             current_image = match_list[image_slider(1)]
+            print(current_image)
+            print(match_list)
             stats=get_stats(current_image)
 
             return render_template(
