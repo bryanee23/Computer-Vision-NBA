@@ -140,11 +140,10 @@ h1{
   padding-bottom: 1rem;
   line-height: 3.2rem;
   border-radius: 2rem;
-  margin: 0 1%;
+  margin: 0 4%;
 }
 .known-imgs{
   background-color: #68b6e5;
-
 }
 
 .unknown-imgs{
@@ -220,9 +219,28 @@ footer div {
   justify-content: center;
   font-size: 1.5rem;
   text-align: center;
-  padding-top: 1%;
+  padding-bottom: 0.5%;
 }
 
+footer ul div{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer ul li{
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: start;
+}
+
+footer ul li::before {
+  content: "\2022";
+  color: #141f9b;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
 
 .contact {
   display: grid;
@@ -233,7 +251,7 @@ footer div {
   display: flex;
   justify-content: left;
   font-size: 1.5rem;
-  margin: 3% 2% 0;
+  margin: 2% 2% 0;
 }
 
 
@@ -274,16 +292,4 @@ footer ul {
   margin: 0 auto;
   line-height: 2.3rem;
 }
-footer ul li{
-  display: flex;
-  justify-content: start;
-}
 
-footer ul li::before {
-  content: "\2022";
-  color: #141f9b;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-}
