@@ -26,7 +26,7 @@
 
       </form>
 
-      
+
       <div id="loading" style="display:none;">
         <img src="/static/loading.gif" alt="" />
       </div>
@@ -145,5 +145,17 @@
     </div>
   </div>
   {% endif %}
+
+  <footer>
+    <div>
+      <ul>
+        Tech used:
+        <li> Python, Flask, OpenCV, Face_Recognition</li>
+      </ul>
+    </div>
+    <form method="post" action="/">
+      <button type="submit" value="reset" name="reset">reset</button>
+    </form>
+  </footer>
 
 {% endblock %}
