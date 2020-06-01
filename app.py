@@ -114,7 +114,6 @@ def index():
         return render_template(
             "index.html",
             step1=True,
-            step3=True,
             text_output=textOutput[0],
             )
 
