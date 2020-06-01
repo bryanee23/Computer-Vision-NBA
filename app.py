@@ -16,9 +16,9 @@ app.secret_key = os.urandom(24)
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
-    0 : "Go to Step 1",
-    1 : "Known person loaded, proceed to Step 2",
-    2 : "Verification images loaded, proceed to Step 3",
+    0 : "Directions:  see Step 1",
+    1 : "Directions:  (images loaded) proceed to Step 2",
+    2 : "Directions:  (images loaded), see results below",
     3 : "Processing...",
     4 : (f"Matches Found: {len(os.listdir(MATCHES_DIR))}")
 }
@@ -90,7 +90,7 @@ def index():
                 start=True,
                 stats=stats
                 )
-                
+
         elif request.form.get('prev') == 'prev':
 
             current_image = match_list[image_slider(-1)]

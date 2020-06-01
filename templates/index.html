@@ -12,7 +12,7 @@
 
   <div class="text-output">
     <div>
-      Directions:  {{text_output}}
+      {{text_output}}
     </div>
   </div>
 
@@ -98,7 +98,7 @@
 
       {% if step3 %}
       <form method="post" action="/">
-        <button type="submit" value="start" name="start">results</button>
+        <button type="submit" value="start" name="start">view results</button>
       </form>
       {% endif %}
 
@@ -118,37 +118,24 @@
   {% if start %}
   <div class="output_container">
     <div class="output_img">
-
       <img src='/static/images/matches/{{current_image}}' />
-
     </div>
+
     <div class="stats">
+
       <ul>
+      <div class="results_name">
         {{stats['full name']}}
-        <li>{{stats['team'] }}</li>
-        <li> games played: {{stats['games played'] }}</li>
-        <li> points per game: {{stats['points per game'] }}</li>
-        <li> shooting percentage: {{stats['shooting percentage'] }}</li>
+      </div>
+        <br/>
+
+        <li>{{stats['team'] }} (2019-2020)</li>
+        <li> Games Played: {{stats['games played'] }}</li>
+        <li> Points per Game: {{stats['points per game'] }}</li>
+        <li> Shooting Percentage: {{stats['shooting percentage'] }}</li>
       </ul>
     </div>
-  </div>
-  {% endif %}
-  {% if output_container %}
-  <div class="output_container">
-    <div class="output_img">
 
-      <img src='/static/images/matches/{{current_image}}' />
-
-    </div>
-    <div class="stats">
-      <ul>
-        {{stats['full name']}}
-        <li>{{stats['team'] }}</li>
-        <li> games played: {{stats['games played'] }}</li>
-        <li> points per game: {{stats['points per game'] }}</li>
-        <li> shooting percentage: {{stats['shooting percentage'] }}</li>
-      </ul>
-    </div>
   </div>
   {% endif %}
 
