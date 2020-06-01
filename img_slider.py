@@ -1,10 +1,12 @@
 import os
-from directory import *
+from directory import MATCHES_DIR
 
 match_list = os.listdir(MATCHES_DIR)
 
 index = 0
+
 def image_slider(n):
+
   global index
   len_list = len(match_list)-1
 

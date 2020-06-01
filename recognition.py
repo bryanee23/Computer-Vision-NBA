@@ -51,12 +51,13 @@ def initate_recognition():
           known_faces.append(encoding)
           known_names.append(name)
 
-
-
-
+################################################
+#### technically two functions
+#### initiate and loading knowns
+#### loading knowns was not working correctly
+################################################
 
   print("Processing Unknown Faces")
-
   counter = 0
   for filename in os.listdir(f"{UNKNOWN_FACES_DIR}"):
 
@@ -92,7 +93,7 @@ def initate_recognition():
               cv2.imwrite(f"{MATCHES_DIR}/{match}-{counter}.png", image)
               counter += 1
 
-# clear arrays
+# clear list contents
   while len(known_faces) > 0:
     known_faces.pop()
   while len(known_names) > 0:
