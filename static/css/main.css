@@ -25,7 +25,7 @@ body{
   margin-right: 5%;
   background: rgb(236, 236, 241);
   box-shadow: 0.5rem 0.5rem 1rem rgb(141, 138, 138);
-
+  font-weight: bold;
 }
 
 .title {
@@ -39,7 +39,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -7%;
+  margin-top: -6%;
 }
 
 .text-output {
@@ -55,12 +55,19 @@ body{
 }
 
 .text-output-start {
-  /* border: 1px solid blue; */
   display: inline-grid;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  background: cadetblue;
+  margin: 0.9rem 26%;
+  border-radius: 2rem;
 }
 
+.text-output-start div {
+  text-align: center;
+  line-height: 2.5rem;
+}
 
 .button {
 	display: inline-block;
@@ -119,20 +126,20 @@ body{
   justify-content: center;
   padding: 1rem;
   line-height: 4rem;
+  border-radius: 2rem;
+  margin: 0 1%;
 }
 .known-imgs{
   background-color: #68b6e5;
-  border-radius: 2rem;
+
 }
 
 .unknown-imgs{
   background-color: #799bd5;
-  border-radius: 2rem;
 }
 
 input {
-  background-color: rgb(236, 236, 241);
-  z-index: 2;
+  color: rgb(236, 236, 241);
 }
 
 /* processing page */
@@ -170,7 +177,7 @@ input {
 footer {
   display: grid;
   grid-template-columns: 1fr;
-
+    font-weight: normal;
 }
 
 footer div {
