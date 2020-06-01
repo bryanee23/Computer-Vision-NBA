@@ -5,6 +5,19 @@ body{
   font-size: 1.7rem;
 }
 
+#loading {
+  display: block;
+  z-index: 100;
+  position: relative;
+  top: -3.5rem;
+  left: -5rem;
+}
+
+#loading img {
+  height: 4.5rem;
+  width: 3rem ;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;

@@ -17,3 +17,6 @@ requests==2.23.0
 urllib3==1.25.9
 Werkzeug==1.0.1
 cmake
+
+spinner icons
+https://icons8.com/preloaders/en/search/circle

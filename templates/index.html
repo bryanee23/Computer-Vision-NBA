@@ -2,7 +2,6 @@
 
 {% block body %}
 
-
 <div class="grid-container">
 
   <div class="text-output">
@@ -13,54 +12,88 @@
 
   <div class="img-uploads-container">
     <div class="known-imgs">
+
       <div>Step 1: Upload folder of person to identify</div>
+
+
       {% if step1 %}
       <form method="post" action="/" enctype="multipart/form-data">
+
         <input type="file" name="known" webkitdirectory="" directory="">
-        <button type="submit" value="known" name="known">
+        <button type="submit" value="known" name="known" onclick="$('#loading').show();">
           upload known &#xbb;
         </button>
-      </form>
-      {% endif %}
 
+      </form>
+
+      
+      <div id="loading" style="display:none;">
+        <img src="/static/loading.gif" alt="" />
+      </div>
+
+        {% endif %}
+
+      <!-- additional loads -->
       {% if step2 or step3 %}
       <form method="post" action="/" enctype="multipart/form-data">
-        <button type="submit" value="add_knowns" name="add_knowns">
+
+        <button type="submit" value="add_knowns" name="add_knowns" >
           add folder
         </button>
+
       </form>
       {% endif %}
     </div>
 
+
     <div class="unknown-imgs">
       <div>Step 2: Upload images to search through</div>
+
+
+      <!-- initiate facial recognition -->
       {% if step2 %}
       <form method="post" action="/" enctype="multipart/form-data">
+
         <input type="file" name="unknown" multiple>
-        <button type="submit" value="unknown" name="unknown">
+        <button type="submit" value="unknown" name="unknown" onclick="$('#loading').show();">
           load search images &#xbb;
         </button>
+
+      </form>
+      <div id="loading" style="display:none;">
+        <img src="/static/loading.gif" alt="" />
+      </div>
+
       </form>
       {% endif %}
 
+
+      <!-- additional loads -->
       {% if step3 %}
       <form method="post" action="/">
+
         <button type="submit" value="add_unknowns" name="add_unknowns">
           add images
         </button>
+
       </form>
     {% endif %}
 
     </div>
   </div>
 
+
+
+
+
+
   <div class="text-output-start">
     <div>
-      Step 3:
+      {{results}}
 
       {% if step3 %}
       <form method="post" action="/">
-        <button type="submit" value="start" name="start" >start</button>
+        <button type="submit" value="start" name="start" >results</button>
       </form>
     {% endif %}
       {% if start %}

@@ -70,7 +70,8 @@ def index():
 
             return render_template(
                 "index.html",
-                text_output=textOutput[4],
+                results=textOutput[4],
+                text_output=" ",
                 current_image=current_image,
                 start=True,
                 stats=stats
@@ -83,7 +84,8 @@ def index():
 
             return render_template(
                 "index.html",
-                text_output=textOutput[4],
+                results=textOutput[4],
+                text_output=" ",
                 current_image=current_image,
                 start=True,
                 stats=stats
@@ -96,7 +98,8 @@ def index():
 
             return render_template(
                 "index.html",
-                text_output=textOutput[4],
+                results=textOutput[4],
+                text_output=" ",
                 current_image=current_image,
                 start=True,
                 stats=stats
