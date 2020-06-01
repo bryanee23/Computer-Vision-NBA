@@ -33,7 +33,7 @@ def resize_images():
 known_faces = []
 known_names = []
 
-def load_known_person():
+def initate_recognition():
   print('Loading Known Person')
   for name in os.listdir(KNOWN_FACES_DIR):
     if name.endswith(".DS_Store"):
@@ -48,7 +48,7 @@ def load_known_person():
           known_names.append(name)
 
 
-def initate_recognition():
+
   print("Processing Unknown Faces")
   counter = 0
 
