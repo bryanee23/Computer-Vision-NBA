@@ -1,7 +1,7 @@
 html { font-size: 62.5%; }
 
 body{
-  background: rgb(240, 240, 243);
+  background: rgb(214, 214, 233);
   font-size: 1.7rem;
 }
 
@@ -23,15 +23,18 @@ body{
   grid-template-columns: 1fr;
   margin-left: 5%;
   margin-right: 5%;
+  background: rgb(236, 236, 241);
+  box-shadow: 0.5rem 0.5rem 1rem rgb(141, 138, 138);
+
 }
 
 .text-output {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 13rem;
 }
 
 .text-output div {
-  /* border: 1px solid blue; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +63,7 @@ button {
   display: inline-grid;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 
@@ -69,14 +72,14 @@ button {
 .output_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-auto-rows: 20rem; */
+  grid-auto-rows: 20rem;
 }
 
 .stats, .output_img {
-  display: flex;            
-  align-items: center;      
-  justify-content: center;  
-  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
 }
 
 
@@ -100,13 +103,42 @@ button {
 footer {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: 16rem;
+  border-radius: 25px
 }
 
 footer div {
   /* border: 1px solid blue; */
   display: flex;
-  /* align-items: center;      */
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
+.reset form button {
+  border-radius: 0.4rem;
+  color: whitesmoke;
+  background: rgb(230, 52, 52);
+  height: 2.5rem;
+  width: 6rem;
+  border: 0.15rem solid rgba(34, 33, 33, 0.97);
+}
+
+.reset form button:hover{
+  cursor: pointer;
+  background-color: rgb(221, 124, 124);
+}
+.reset form  {
+  margin: 1.5% 5%;
+}
+
+/* ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: blue;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+} */
