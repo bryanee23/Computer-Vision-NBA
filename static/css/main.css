@@ -14,8 +14,7 @@ body{
 }
 
 #loading img {
-  height: 4.5rem;
-  width: 3rem ;
+  width: 7% ;
 }
 
 .grid-container {
@@ -31,7 +30,7 @@ body{
 .title {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 13rem;
+  grid-template-rows: 10rem;
 
 }
 
@@ -39,7 +38,13 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -6%;
+  margin-top: -4%;
+}
+
+h1{
+  border-bottom: 0.4rem solid black;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .text-output {
@@ -59,7 +64,7 @@ body{
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: cadetblue;
+  background: #36ddc8;
   margin: 0.9rem 26%;
   border-radius: 2rem;
 }
@@ -124,8 +129,9 @@ body{
   display: inline-grid;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  line-height: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 3.2rem;
   border-radius: 2rem;
   margin: 0 1%;
 }

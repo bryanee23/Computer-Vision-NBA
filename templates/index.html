@@ -12,7 +12,7 @@
 
   <div class="text-output">
     <div>
-      {{text_output}}
+      Directions:  {{text_output}}
     </div>
   </div>
 
@@ -28,13 +28,13 @@
         <button type="submit" value="known" name="known" onclick="$('#loading').show();">
           upload known &#xbb;
         </button>
-
+        <div id="loading" style="display:none;">
+          <img src="/static/loading.gif" alt="" />
+        </div>
       </form>
 
 
-      <div id="loading" style="display:none;">
-        <img src="/static/loading.gif" alt="" />
-      </div>
+
 
       {% endif %}
 
@@ -63,11 +63,11 @@
         <button type="submit" value="unknown" name="unknown" onclick="$('#loading').show();">
           load search images &#xbb;
         </button>
-
+        <div id="loading" style="display:none;">
+          <img src="/static/loading.gif" alt="" />
+        </div>
       </form>
-      <div id="loading" style="display:none;">
-        <img src="/static/loading.gif" alt="" />
-      </div>
+
 
       </form>
       {% endif %}
