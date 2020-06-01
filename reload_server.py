@@ -1,10 +1,7 @@
-
-
-
-# this file is used to restart the server to reset the data for the contents in the Matches folder after Face Recognition is complete
-
+# for some reason the matches DIR kept storing previous iterations
+# this file is used to reset the server see "reload_server" function in app.py
 def reload_server():
     f = open("reload_server.py", "a")
     f.write(" ")
-    print('write file complete')
-    f.close()  
+    print('Write Complete, Server Reloaded')
+    f.close()

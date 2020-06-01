@@ -2,7 +2,7 @@ import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
 from empty_folders import reset_all, delete_folder_contents, delete_cache
-from api_call import get_API_info
+from api_call import get_stats
 from directory import *
 from img_slider import *
 from reload_server import reload_server

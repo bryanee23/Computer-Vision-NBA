@@ -6,12 +6,14 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
-# check file names
+
+
 def allowed_file(filename):
     return "." in filename and \
            filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+# for known folders
 def create_new_DIR(name, project_dir):
     name = name.filename.split("/")
     new_dir = name[0]
@@ -23,6 +25,8 @@ def create_new_DIR(name, project_dir):
     else:
         print ("Successfully created the directory %s" % path)
     return path
+
+
 
 def upload_images(request, element_tag, save_location):
     ROOT_DIR = os.getcwd()
@@ -40,12 +44,14 @@ def upload_images(request, element_tag, save_location):
             return redirect(request.url)
 
         if file and allowed_file(file.filename):
+
                 # handling unknown images
                 ##########################
             if file.filename.find("/") == -1:
                 for image in request.files.getlist(element_tag):
                     image.filename = secure_filename(image.filename)
                     image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
+
             else:
                 # handling known folders
                 ##########################

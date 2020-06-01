@@ -3,7 +3,6 @@ import os
 import cv2
 from directory import *
 
-
 # face_recognition settings
 TOLERANCE = 0.45
 FRAME_THICKNESS = 3
@@ -12,6 +11,8 @@ OFFSET = 15
 COLOR = [0, 255, 0]
 MODEL = "cnn"
 
+
+# resize images to fit within grid
 def resize_images():
   if len(os.listdir(f"{UPLOADED_IMAGES_DIR}")) != len(os.listdir(f"{UNKNOWN_FACES_DIR}")):
     print('Resizing Images')
@@ -32,8 +33,10 @@ def resize_images():
 known_faces = []
 known_names = []
 
+
 def initate_recognition():
   print('Loading Known Person')
+
   for name in os.listdir(KNOWN_FACES_DIR):
     if name.endswith(".DS_Store"):
         continue

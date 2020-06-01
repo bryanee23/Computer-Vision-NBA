@@ -4,7 +4,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-def NBA_stats(first_name, last_name):
+# helper function
+def _NBA_stats(first_name, last_name):
 
     player_info = {
         'ID':None,
@@ -34,7 +35,8 @@ def NBA_stats(first_name, last_name):
     return player_info
 
 
-def get_API_info(name):
+# get the stats of NBA players or return the name of the known person
+def get_stats(name):
 
     fullname_split = name.split("-")
     fullname = fullname_split[0].split()
@@ -42,7 +44,7 @@ def get_API_info(name):
     if len(fullname) == 2:
         first_name = fullname[0]
         last_name = fullname[1]
-        return NBA_stats(first_name, last_name)
+        return _NBA_stats(first_name, last_name)
     else:
         fullname_split.pop()
         name = fullname_split[0]
