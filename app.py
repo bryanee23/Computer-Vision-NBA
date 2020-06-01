@@ -1,12 +1,12 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 from uploads import upload_images
-from empty_folders import reset_all, delete_folder_contents, delete_cache
+from empty_folders import reset_all, delete_folder_contents
 from api_call import get_stats
 from directory import *
 from img_slider import *
 from reload_server import reload_server
-from recognition import resize_images,initate_recognition
+from recognition import run_face_recognition_script
 
 
 app = Flask(__name__)
@@ -51,8 +51,7 @@ def index():
         elif request.form.get('unknown') == 'unknown':
 
             upload_images(request, 'unknown', 'uploads')
-            resize_images()
-            initate_recognition()
+            run_face_recognition_script()
             reload_server()
 
             return render_template(
@@ -67,7 +66,8 @@ def index():
 
             delete_folder_contents("uploads")
             current_image = match_list[0]
-            stats=get_API_info(current_image)
+            stats=get_stats(current_image)
+
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
@@ -79,9 +79,8 @@ def index():
         elif request.form.get('next') == 'next':
 
             current_image = match_list[image_slider(1)]
+            stats=get_stats(current_image)
 
-
-            stats=get_API_info(current_image)
             return render_template(
                 "index.html",
                 text_output=textOutput[4],
@@ -93,7 +92,7 @@ def index():
         elif request.form.get('prev') == 'prev':
 
             current_image = match_list[image_slider(-1)]
-            stats=get_API_info(current_image)
+            stats=get_stats(current_image)
 
             return render_template(
                 "index.html",
@@ -104,7 +103,9 @@ def index():
                 )
 
         elif request.form.get('reset') == 'reset':
+
             reset_all()
+
             return render_template(
                 "index.html",
                 text_output=textOutput[0],

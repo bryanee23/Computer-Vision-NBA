@@ -14,6 +14,7 @@ MODEL = "cnn"
 
 # resize images to fit within grid
 def resize_images():
+
   if len(os.listdir(f"{UPLOADED_IMAGES_DIR}")) != len(os.listdir(f"{UNKNOWN_FACES_DIR}")):
     print('Resizing Images')
     for filename in os.listdir(f"{UPLOADED_IMAGES_DIR}"):
@@ -35,6 +36,7 @@ known_names = []
 
 
 def initate_recognition():
+
   print('Loading Known Person')
 
   for name in os.listdir(KNOWN_FACES_DIR):
@@ -51,20 +53,25 @@ def initate_recognition():
 
 
 
-  print("Processing Unknown Faces")
-  counter = 0
 
+
+  print("Processing Unknown Faces")
+
+  counter = 0
   for filename in os.listdir(f"{UNKNOWN_FACES_DIR}"):
+
       image = face_recognition.load_image_file(f"{UNKNOWN_FACES_DIR}/{filename}")
       face_locations = face_recognition.face_locations(image, model=MODEL)
       encodings = face_recognition.face_encodings(image, face_locations) #takes current image and finds all faces
       image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
       for face_encoding, face_location in zip(encodings, face_locations):
+
           results = face_recognition.compare_faces(known_faces, face_encoding, TOLERANCE)
           match = None
 
           if True in results:
+
               match = known_names[results.index(True)]
               top_left = (face_location[3], face_location[0] - OFFSET)
               bottom_right = (face_location[1] + OFFSET, face_location[2] + OFFSET)
@@ -92,3 +99,8 @@ def initate_recognition():
     known_names.pop()
 
   print('Face Recognintion Complete')
+
+
+def run_face_recognition_script():
+  resize_images()
+  initate_recognition()
