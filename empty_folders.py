@@ -29,5 +29,5 @@ def reset_all():
   delete_folder_contents("matches")
   delete_cache()
   reload_server()
-  print('reset complete')
+  print('Reset Complete')
 
