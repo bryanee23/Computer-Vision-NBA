@@ -29,7 +29,6 @@ def resize_images():
         cv2.imwrite(f'{UNKNOWN_FACES_DIR}/{filename}', image)
 
 
-
 known_faces = []
 known_names = []
 

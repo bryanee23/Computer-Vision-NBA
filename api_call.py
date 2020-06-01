@@ -26,7 +26,7 @@ def NBA_stats(first_name, last_name):
 
     stats = requests.get(f"https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]={player_info['ID']}")
     statsData = stats.json()['data'][0]
-    
+
     player_info['games played'] = statsData['games_played']
     player_info['points per game'] = statsData['pts']
     player_info['shooting percentage'] = (f"{float(statsData['fg_pct'] * 100)}%")

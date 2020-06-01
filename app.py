@@ -5,11 +5,20 @@ from empty_folders import reset_all, delete_folder_contents, delete_cache
 from api_call import get_API_info
 from directory import *
 from img_slider import *
+from runtime import *
 from recognition import resize_images,initate_recognition
 
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+
+
+
+def reload_server():
+    f = open("runtime.py", "a")
+    f.write("here")
+    f.close()
+
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
@@ -49,7 +58,9 @@ def index():
             upload_images(request, 'unknown', 'uploads')
             resize_images()
             initate_recognition()
-            print(match_list)
+            print('list', match_list)
+            reload_server()
+            print('reload server', match_list)
 
             return render_template(
                 "index.html",
@@ -61,7 +72,7 @@ def index():
 
         elif request.form.get('start') == 'start':
             delete_folder_contents("uploads")
-
+            print('list', match_list)
             current_image = match_list[image_slider(1)]
 
             stats=get_API_info(current_image)
@@ -119,5 +130,9 @@ def index():
             )
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
+#     app.run()
+if __name__ == '__main__':
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run()
