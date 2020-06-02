@@ -72,12 +72,13 @@ h1{
   background: #36ddc8;
   margin: 0.9rem 26%;
   border-radius: 2rem;
+  box-shadow: 0.5rem 0.5rem 1rem #545454;
 }
 
 .text-output-start div {
   text-align: center;
   line-height: 2.5rem;
-  box-shadow: 0.5rem 0.5rem 1rem #545454;
+
 }
 
 

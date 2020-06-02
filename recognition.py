@@ -4,7 +4,7 @@ import cv2
 from directory import *
 
 # face_recognition settings
-TOLERANCE = 0.35
+TOLERANCE = 0.45
 FRAME_THICKNESS = 3
 FONT_THICKNESS = 2
 OFFSET = 15
