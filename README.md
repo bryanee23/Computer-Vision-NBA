@@ -2,8 +2,7 @@
 
 <h1 align="center">
   <br>
-logo
-<!-- <img src="/static/readme/screenshots.gif"> -->
+<img src="/static/readme/logo.png">
 </h1>
 
 
