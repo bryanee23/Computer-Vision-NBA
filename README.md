@@ -12,7 +12,7 @@ logo
 
 This project was completed to gain the basic understanding of OpenCV, Flask, and Face Recognition
 
-
+<br/>
 ---
 
 ## Setup and Clone
@@ -37,7 +37,7 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 - Clone this repo to your local machine using `https://github.com/bryanee23/Computer-Vision-NBA.git`
 
 
-
+<br/>
 ---
 
 ## Basic Usage and Demo
@@ -50,17 +50,16 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 Image requirements of a person to identify:
 -	Save 3-4 pictures of an NBA player to be identified into a folder
 -	Images should only contain the person to be identified
--	Save folder as “(First name of player) (Last name of player)“, example: "Stephen Curry"
+-	Save folder as “(First name of player) (Last name of player)“; example: "Stephen Curry"
 - Then follow the steps on the screen
 
 Samples (playback speed was increased to shorten video duration):
 - <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Demo Video 1</a>
 - <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Demo Video 2</a>
+
+
 <br/>
-
-
 ---
-
 
 ## Features
 -	<a href="https://opencv.org/">OpenCV</a>
@@ -68,11 +67,13 @@ Samples (playback speed was increased to shorten video duration):
 -	<a href="https://pypi.org/project/face-recognition/">Face Recognition</a>
 -	<a href="www.balldontlie.io">balldontlie API</a>
 
+<br/>
 ---
 
 ## Credit
 - <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg">Link to OpenCV and Face Recognition tutorial by sentdex</a>
 
+<br/>
 ---
 
 ## Disclamier
@@ -80,6 +81,7 @@ Samples (playback speed was increased to shorten video duration):
 
 - This project is not affliation with the NBA. Please don't sue me!
 
+<br/>
 ---
 
 ## License
