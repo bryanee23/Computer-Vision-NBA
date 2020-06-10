@@ -1,4 +1,4 @@
-# ComputerVision-NBA Players
+# ComputerVision: NBA Players
 
 <h1 align="center">
   <br>
@@ -50,7 +50,7 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 Image requirements of a person to identify:
 -	Save 3-4 pictures of an NBA player to be identified into a folder
 -	Images should only contain the person to be identified
--	Save folder as “(First name of player) (Last name of player)“
+-	Save folder as “(First name of player) (Last name of player)“ ex("Stephen Curry")
 - Then follow the steps on the screen
 
 Samples (playback speed was increased to shorten video duration):
