@@ -29,6 +29,7 @@ $ pip install flask
 
 
 OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/">pyimagesearch.com</a>
+<br/>
 
 ### Clone
 
