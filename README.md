@@ -15,7 +15,7 @@ This project was completed to gain the basic understanding of OpenCV, Flask, and
 
 ## Setup and Clone
 
-The full list of requirements can be seen <a href="https://github.com/bryanee23/flask-site/blob/master/license_readme_server%20scrpit_requirements/requirements.txt">here</a>
+The full list of requirements: <a href="https://github.com/bryanee23/flask-site/blob/master/license_readme_server%20scrpit_requirements/requirements.txt">here</a>
 
 
 ### Setup
@@ -50,7 +50,7 @@ Image requirements of a person to identify:
 -	Save folder as “(First name of player) (Last name of player)“; example: "Stephen Curry"
 - Then follow the steps on the screen
 
-Samples (playback speed was increased to shorten video duration):
+Video Samples (playback speed was increased to shorten video duration):
 - <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Demo Video 1</a>
 - <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Demo Video 2</a>
 <br/>
@@ -75,7 +75,7 @@ Samples (playback speed was increased to shorten video duration):
 ## Disclamier
 - The images used in this project are not my property and were only used for educational purposes. Please don't sue me!
 
-- This project is not affliation with the NBA. Please don't sue me!
+- This project is not affiliated with the NBA. Please don't sue me!
 <br/>
 
 ---
