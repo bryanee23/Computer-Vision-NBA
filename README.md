@@ -61,11 +61,12 @@ Samples (playback speed was increased to shorten video duration):
 
 ---
 
+
 ## Features
--	OpenCV
--	Flask
--	Face Recognition
--	www.balldontlie.io
+-	<a href="https://opencv.org/">OpenCV</a>
+-	<a href="https://palletsprojects.com/p/flask/">Flask</a>
+-	<a href="https://pypi.org/project/face-recognition/">Face Recognition</a>
+-	<a href="www.balldontlie.io">balldontlie API</a>
 
 ---
 
