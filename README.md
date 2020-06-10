@@ -53,11 +53,11 @@ Image requirements of a person to identify:
 -	Save folder as “(First name of player) (Last name of player)“
 - Then follow the steps on the screen
 
-Samples:
+Samples (playback speed was increased to shorten video duration):
 - <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Demo Video 1</a>
 - <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Demo Video 2</a>
 <br/>
-*playback speed was increased to shorten video duration
+
 
 ---
 
