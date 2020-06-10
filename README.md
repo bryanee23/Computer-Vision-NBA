@@ -56,7 +56,7 @@ Image requirements of a person to identify:
 Videos:
 - <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Video 1</a>
 - <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Video 2</a>
-* videos were sped up to shorten duration
+*playback speed was increased to shorten video duration
 
 
 
@@ -71,6 +71,4 @@ Videos:
 ---
 
 ## Credit
-- <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg">
-Link to OpenCV and Face Recognition tutorial by sentdex
-</a>
+- <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg">Link to OpenCV and Face Recognition tutorial by sentdex</a>
