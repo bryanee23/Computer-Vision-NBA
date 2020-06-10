@@ -72,3 +72,8 @@ Videos:
 
 ## Credit
 - <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg">Link to OpenCV and Face Recognition tutorial by sentdex</a>
+
+---
+
+## License
+MIT  © 2020 [Bryan Evangelista](https://www.linkedin.com/in/bryanevangelista/)
