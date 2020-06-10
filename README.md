@@ -67,7 +67,7 @@ Video Samples (playback speed was increased to shorten video duration):
 ---
 
 ## Credit
-- <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg">Link to OpenCV and Face Recognition tutorial by sentdex</a>
+- <a href="https://www.youtube.com/watch?v=PdkPI92KSIs&t=109sg"> OpenCV and Face Recognition tutorial by sentdex</a>
 <br/>
 
 ---
