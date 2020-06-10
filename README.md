@@ -53,9 +53,10 @@ Image requirements of a person to identify:
 -	Save folder as “(First name of player) (Last name of player)“
 - Then follow the steps on the screen
 
-Full length demo videos:
-- <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">video 1</a>
-- <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">video 2</a>
+Videos:
+- <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Video 1</a>
+- <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Video 2</a>
+* videos were sped up to shorten duration
 
 
 
