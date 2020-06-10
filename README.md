@@ -2,4 +2,4 @@
 flask-site attempt
 
 
-<img src="/static/readme_images/screenshots.gif">
+<img src="/static/readme/screenshots.gif">
