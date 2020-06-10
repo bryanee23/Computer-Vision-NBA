@@ -21,4 +21,4 @@ This project was completed to gain the basic understanding of OpenCV, Flask, and
 Videos in real time <a href=#>here</a>.
 
 ## Installation
-The following was used to create this project, 
+The full list of requirements can be seen <a href="https://github.com/bryanee23/flask-site/blob/master/license_readme_server%20scrpit_requirements/requirements.txt">here</a>
