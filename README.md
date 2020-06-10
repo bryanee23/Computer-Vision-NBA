@@ -53,13 +53,11 @@ Image requirements of a person to identify:
 -	Save folder as “(First name of player) (Last name of player)“
 - Then follow the steps on the screen
 
-Videos:
-- <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Video 1</a>
-- <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Video 2</a>
+Samples:
+- <a href="https://drive.google.com/file/d/1wL7EyNAajq060LifrQtv-5wWWLIDzKNX/view?usp=sharing">Demo Video 1</a>
+- <a href="https://drive.google.com/file/d/1DrNX3qVt9I_ONk5uQ-fAIn3lxyiZ24GM/view?usp=sharing">Demo Video 2</a>
 <br/>
 *playback speed was increased to shorten video duration
-
-
 
 ---
 
@@ -77,7 +75,7 @@ Videos:
 ---
 
 ## Disclamier
-- The pictures used in this project are not my property and were only used for educational purposes. Please don't sue me!
+- The images used in this project are not my property and were only used for educational purposes. Please don't sue me!
 
 - This project is not affliation with the NBA. Please don't sue me!
 
