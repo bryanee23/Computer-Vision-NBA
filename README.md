@@ -12,10 +12,13 @@ logo
 
 This project was completed to gain the basic understanding of OpenCV, Flask, and Face Recognition
 
-# Demo
+## Demo
 <h1 align="center">
   <br>
 <img src="/static/readme/screenshots.gif">
 </h1>
 
 Videos in real time <a href=#>here</a>.
+
+## Installation
+The following was used to create this project, 
