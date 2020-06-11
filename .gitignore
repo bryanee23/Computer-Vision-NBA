@@ -17,10 +17,10 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
-images/known/emptyfile.txt
-images/matches/emptyfile.txt
-images/unknown/emptyfile.txt
-images/uploads/emptyfile.txt
+static/images/known/emptyfile.txt
+static/images/matches/emptyfile.txt
+static/images/unknown/emptyfile.txt
+static/images/uploads/emptyfile.txt
 
 # Coverage reports
 htmlcov/
