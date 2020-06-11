@@ -17,7 +17,7 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
-.emptyfile
+emptyfile.txt
 
 # Coverage reports
 htmlcov/
