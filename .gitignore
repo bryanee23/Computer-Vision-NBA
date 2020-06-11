@@ -32,3 +32,6 @@ htmlcov/
 /.vscode
 /test
 /static/images/known/emptyfilefolder
+static/images/matches/emptyfilefolder/
+
+
