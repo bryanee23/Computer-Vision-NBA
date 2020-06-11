@@ -1,8 +1,5 @@
 import os
 from directory import MATCHES_DIR
-from create_DIR import create_IMAGES_DIR
-
-
 
 match_list = os.listdir(MATCHES_DIR)
 
