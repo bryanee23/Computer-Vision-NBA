@@ -30,6 +30,3 @@ htmlcov/
 /__pycache__
 /.vscode
 /test
-
-
-/static/images/known/empty.txt
