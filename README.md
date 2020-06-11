@@ -41,6 +41,8 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 ```shell
 $ flask run
 ```
+> open localhost:5000
+
 <br/>
 
 ---
