@@ -17,8 +17,9 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
+
 static/images/known/emptyfile.txt
-static/images/matches/emptyfile.txt
+static/images/matches/emptyfile2.txt
 static/images/unknown/emptyfile.txt
 static/images/uploads/emptyfile.txt
 
