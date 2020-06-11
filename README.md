@@ -39,7 +39,6 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 ### Flask developer config
 
 ```shell
-export FLASK_APP=app.py
 flask run
 ```
 <br/>
