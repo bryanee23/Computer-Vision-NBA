@@ -5,8 +5,7 @@ from flask import Flask
 folders = ['known', 'unknown', 'matches', 'uploads']
 
 def create_IMAGES_DIR():
-
-  if os.listdir(IMAGES_DIR):
+  if (f"{IMAGES_DIR}/{folders[0]}") == True:
     pass
   else:
     for folder_Name in folders:
@@ -19,3 +18,5 @@ def create_IMAGES_DIR():
           print ("Successfully created the directory %s" % path)
 
     return path
+
+

@@ -3,7 +3,9 @@ from flask import Flask, flash, render_template, Response, request, redirect, ur
 
 # empty static/images DIR needed by all other scripts
 from create_DIR import create_IMAGES_DIR
+
 create_IMAGES_DIR()
+
 
 from uploads import upload_images
 from empty_folders import reset_all, delete_folder_contents
