@@ -1,3 +1,4 @@
+
 .DS_Store
 .env
 .flaskenv
@@ -28,3 +29,4 @@ htmlcov/
 /__pycache__
 /.vscode
 /test
+
