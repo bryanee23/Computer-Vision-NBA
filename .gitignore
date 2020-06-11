@@ -18,6 +18,7 @@ _mailinglist
 docs/_build/
 .vscode
 /emptyfile.txt
+emptyfile.txt/
 
 # Coverage reports
 htmlcov/
