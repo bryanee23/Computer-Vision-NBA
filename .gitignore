@@ -33,5 +33,7 @@ htmlcov/
 /test
 /static/images/known/emptyfilefolder
 static/images/matches/emptyfilefolder/
+emptyfilefolder/
+/emptyfilefolder
 
 
