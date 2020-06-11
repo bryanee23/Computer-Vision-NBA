@@ -36,7 +36,7 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 - Clone this repo to your local machine using `https://github.com/bryanee23/Computer-Vision-NBA.git`
 <br/>
 
-### Flask Server Script
+### Flask developer config
 
 ```shell
 export FLASK_APP=app.py
