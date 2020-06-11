@@ -13,7 +13,6 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 
-
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
     0 : "Directions:  see step 1",
