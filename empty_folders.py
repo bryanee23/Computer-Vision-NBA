@@ -29,6 +29,6 @@ def reset_all():
   delete_folder_contents("uploads")
   delete_folder_contents("matches")
   reload_server()
-  create_IMAGES_DIR()
+  # create_IMAGES_DIR()
   print('Reset Complete')
 

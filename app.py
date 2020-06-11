@@ -7,11 +7,12 @@ from directory import *
 from img_slider import *
 from reload_server import reload_server
 from recognition import run_face_recognition_script
-from create_DIR import create_IMAGES_DIR
+# from create_DIR import create_IMAGES_DIR
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+reset_all()
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
@@ -25,7 +26,6 @@ textOutput = {
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    create_IMAGES_DIR()
     if request.method == 'POST':
 
         if request.form.get('known') == 'known' or request.form.get('add_unknowns') == 'add_unknowns':
