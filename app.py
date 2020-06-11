@@ -1,5 +1,9 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
+
+from create_DIR import create_IMAGES_DIR
+create_IMAGES_DIR()
+
 from uploads import upload_images
 from empty_folders import reset_all, delete_folder_contents
 from api_call import get_stats
@@ -7,12 +11,12 @@ from directory import *
 from img_slider import *
 from reload_server import reload_server
 from recognition import run_face_recognition_script
-# from create_DIR import create_IMAGES_DIR
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-reset_all()
+
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
