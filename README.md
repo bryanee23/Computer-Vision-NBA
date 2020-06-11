@@ -40,7 +40,6 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 
 ```shell
 export FLASK_APP=app.py
-export FLASK_ENV=development
 flask run
 ```
 <br/>
