@@ -17,8 +17,7 @@ _mailinglist
 .idea/
 docs/_build/
 .vscode
-/emptyfile.txt
-emptyfile.txt/
+
 
 # Coverage reports
 htmlcov/
@@ -31,9 +30,6 @@ htmlcov/
 /__pycache__
 /.vscode
 /test
-/static/images/known/emptyfilefolder
-static/images/matches/emptyfilefolder/
-emptyfilefolder/
-/emptyfilefolder
 
 
+/static/images/known/empty.txt
