@@ -2,7 +2,6 @@ import os
 import shutil
 from reload_server import reload_server
 
-
 ROOT_DIR = os.getcwd()
 
 def delete_folder(folder):
