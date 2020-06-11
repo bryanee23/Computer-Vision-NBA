@@ -1,6 +1,7 @@
 import os
 from flask import Flask, flash, render_template, Response, request, redirect, url_for
 
+# empty static/images DIR needed by all other scripts
 from create_DIR import create_IMAGES_DIR
 create_IMAGES_DIR()
 
@@ -15,8 +16,6 @@ from recognition import run_face_recognition_script
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-
-
 
 match_list = os.listdir(MATCHES_DIR)
 textOutput = {
@@ -129,9 +128,5 @@ def index():
             )
 
 
-# if __name__ == "__main__":
-#     app.run()
-if __name__ == '__main__':
-    app.jinja_env.auto_reload = True
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
+if __name__ == "__main__":
     app.run()

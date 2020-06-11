@@ -2,10 +2,6 @@ import os
 from directory import IMAGES_DIR
 from flask import Flask
 
-app = Flask(__name__)
-app.secret_key = os.urandom(24)
-
-
 folders = ['known', 'unknown', 'matches', 'uploads']
 
 def create_IMAGES_DIR():

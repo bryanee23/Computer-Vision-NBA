@@ -13,12 +13,12 @@ This project was completed to gain basic understanding of OpenCV, Flask, and Fac
 
 ---
 
-## Setup and Clone
+## Setup
 
 The full list of requirements: <a href="https://github.com/bryanee23/flask-site/blob/master/license_readme_server%20scrpit_requirements/requirements.txt">here</a>
 
 
-### Setup
+### Installations
 
 > install python 3.7.6
 
@@ -35,6 +35,14 @@ OpenCV install tutorial: <a href="https://www.pyimagesearch.com/2018/09/19/pip-i
 
 - Clone this repo to your local machine using `https://github.com/bryanee23/Computer-Vision-NBA.git`
 <br/>
+
+### Flask Server Script
+
+```shell
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
 
 ---
 
