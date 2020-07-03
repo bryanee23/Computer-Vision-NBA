@@ -8,7 +8,7 @@
 
 <h4 align="center">Identifies NBA players within images and outputs their stats from the 2019-2020 season.</h4>
 
-This project was completed to gain basic understanding of OpenCV, Flask, and Face Recognition
+<h5 align="center">This project was completed to gain basic understanding of OpenCV, Flask, and Face Recognition.</>
 <br/>
 
 ---
